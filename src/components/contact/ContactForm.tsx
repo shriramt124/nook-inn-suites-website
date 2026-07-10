@@ -24,6 +24,8 @@ export const ContactForm: React.FC = () => {
   const [showToast, setShowToast] = useState(false);
   const [toastMsg, setToastMsg] = useState("");
 
+  const [toastType, setToastType] = useState<"success" | "error">("success");
+
   const {
     register,
     handleSubmit,
@@ -41,11 +43,22 @@ export const ContactForm: React.FC = () => {
   });
 
   const onSubmit = async (data: ContactFormValues) => {
-    // Mocking an inquiry submission API request
-    await new Promise((resolve) => setTimeout(resolve, 1500));
-    setToastMsg(`Thank you, ${data.name}. Your inquiry has been sent to our reception desk.`);
-    setShowToast(true);
-    reset();
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+      if (!res.ok) throw new Error("Failed");
+      setToastMsg(`Thank you, ${data.name}. Your inquiry has been sent to our reception desk.`);
+      setToastType("success");
+      reset();
+    } catch {
+      setToastMsg("Something went wrong. Please try again or call us directly.");
+      setToastType("error");
+    } finally {
+      setShowToast(true);
+    }
   };
 
   return (
@@ -53,7 +66,7 @@ export const ContactForm: React.FC = () => {
       <Toast
         isVisible={showToast}
         message={toastMsg}
-        type="success"
+        type={toastType}
         onClose={() => setShowToast(false)}
       />
 

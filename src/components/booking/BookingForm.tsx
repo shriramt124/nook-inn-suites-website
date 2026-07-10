@@ -142,10 +142,34 @@ export const BookingForm: React.FC<BookingFormProps> = ({ initialRoomSlug = "" }
   }, [watchedCheckIn, watchedCheckOut, selectedRoom, watchedRoomsCount, watchedCoupon]);
 
   const onSubmit = async (data: BookingFormValues) => {
-    // Simulate API reservation submission delay
-    await new Promise((resolve) => setTimeout(resolve, 2000));
-    setSubmittedData(data);
     const generatedId = `NKS-${Math.floor(100000 + Math.random() * 900000)}`;
+    try {
+      await fetch("/api/booking", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          bookingId: generatedId,
+          guestName: data.guestName,
+          email: data.email,
+          phone: data.phone,
+          country: data.country,
+          roomName: selectedRoom?.name,
+          roomPrice: selectedRoom?.price,
+          checkIn: data.checkIn,
+          checkOut: data.checkOut,
+          adults: data.adults,
+          children: data.children,
+          numberOfRooms: data.numberOfRooms,
+          specialRequests: data.specialRequests,
+          couponCode: data.couponCode,
+          pricing,
+        }),
+      });
+    } catch {
+      // Don't block the UI — booking ID is still shown even if email fails
+      console.error("Email notification failed");
+    }
+    setSubmittedData(data);
     setBookingId(generatedId);
     setIsSubmitted(true);
     setShowToast(true);
