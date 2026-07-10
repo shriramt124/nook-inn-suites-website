@@ -1,0 +1,129 @@
+@import "tailwindcss";
+
+@theme {
+  /* Deep Charcoal scale (replaces navy) */
+  --color-primary-50: #f5f5f5;
+  --color-primary-100: #ebebeb;
+  --color-primary-200: #d6d6d6;
+  --color-primary-300: #b0b0b0;
+  --color-primary-400: #737373;
+  --color-primary-500: #1a1a1a; /* Core dark base */
+  --color-primary-600: #141414;
+  --color-primary-700: #0f0f0f;
+  --color-primary-800: #0a0a0a;
+  --color-primary-900: #080808;
+  --color-primary-950: #050505;
+
+  /* Crimson Red scale (replaces antique gold) */
+  --color-gold-50: #fff1f3;
+  --color-gold-100: #ffe4e8;
+  --color-gold-200: #fecdd5;
+  --color-gold-300: #fda4b1;
+  --color-gold-400: #fb7185;
+  --color-gold-500: #e11d35; /* Brand Crimson Red */
+  --color-gold-600: #be1a2e;
+  --color-gold-700: #9b1526;
+  --color-gold-800: #7a101d;
+  --color-gold-900: #5c0c16;
+
+  /* Neutral dark for text and elements */
+  --color-dark-50: #fafafa;
+  --color-dark-100: #f4f4f5;
+  --color-dark-200: #e4e4e7;
+  --color-dark-300: #d4d4d8;
+  --color-dark-400: #a1a1aa;
+  --color-dark-500: #71717a;
+  --color-dark-600: #52525b;
+  --color-dark-700: #3f3f46;
+  --color-dark-800: #27272a;
+  --color-dark-900: #18181b;
+
+  --font-serif: var(--font-serif);
+  --font-sans: var(--font-sans);
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #111111;
+}
+
+/* Custom global styles */
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  overflow-x: hidden;
+  font-weight: 400;
+  line-height: 1.6;
+  text-rendering: optimizeLegibility;
+  -webkit-text-size-adjust: 100%;
+}
+
+::selection {
+  background: rgba(225, 29, 53, 0.18);
+  color: #111111;
+}
+
+::placeholder {
+  color: #6b7280;
+  opacity: 1;
+}
+
+/* Crimson red custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f5f5f5;
+}
+::-webkit-scrollbar-thumb {
+  background: #e11d35;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #be1a2e;
+}
+
+/* Glassmorphism Styles */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.glass-panel-dark {
+  background: rgba(17, 17, 17, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Shimmer & Skeleton Animations */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.animate-shimmer {
+  background: linear-gradient(90deg, #e4e4e7 25%, #f4f4f5 50%, #e4e4e7 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite linear;
+}
+
+/* Luxury transitions and helpers */
+.hover-red-grow {
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.hover-red-grow:hover {
+  color: #e11d35;
+  transform: translateY(-2px);
+}
