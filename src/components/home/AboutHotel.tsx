@@ -1,5 +1,4 @@
 "use client";
-
 import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
@@ -61,18 +60,18 @@ export const AboutHotel: React.FC = () => {
           />
 
           <p className="text-stone-700 font-sans font-normal leading-relaxed text-sm md:text-base">
-            Since our inception, Nook Inn &amp; Suites has redefined boutique hospitality by fusing modern architectural lines with highly personalized, warm service. We believe that true luxury is not simply about premium materials—it is about carving out a personal sanctuary.
+            Nook Inn & Suites is a proud 4-star property nestled in the heart of Gurugram, offering 22 thoughtfully designed rooms — from cozy Comfort Rooms to spacious Family Suites and charming Cottages. Every stay is crafted to make you feel at home while experiencing elevated hospitality.
           </p>
 
           <p className="text-stone-500 font-sans font-normal leading-relaxed text-xs md:text-sm">
-            Whether sipping crafted vintage cognacs in our glass lounge, relaxing in our eucalyptus-infused hot spas, or having a private dinner prepared in-suite by our Michelin chefs, we ensure that every memory created here stands the test of time.
+            Whether you are hosting a corporate event in our modern conference room, celebrating a milestone at our rooftop party venue, or simply unwinding in our lush breakfast garden — we have created the perfect spaces for every occasion. Fully accessible with an in-house lift and dedicated wheelchair assistance.
           </p>
 
           {/* Stats Cards Row */}
           <div className="grid grid-cols-3 gap-4 pt-6">
-            <StatsCard value="12+" label="Years Active" description="Of premium hospitality service" />
-            <StatsCard value="5★" label="Luxury Rating" description="Forbes travel star guide" />
-            <StatsCard value="98%" label="Satisfaction" description="Based on verified reviews" />
+            <StatsCard value="22" label="Total Rooms" description="Comfort, Premium, Family & Cottage" />
+            <StatsCard value="4★" label="Star Rating" description="Certified 4-star hotel" />
+            <StatsCard value="250" label="Banquet Seats" description="For weddings & large events" />
           </div>
         </motion.div>
       </div>

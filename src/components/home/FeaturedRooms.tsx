@@ -9,9 +9,9 @@ import { RoomCard } from "../shared/RoomCard";
 import { Button } from "../ui/Button";
 
 export const FeaturedRooms: React.FC = () => {
-  // Select top 3 premium room entries
+  // Select the 3 featured real room types
   const featuredRooms = MOCK_ROOMS.filter((room) =>
-    ["presidential-suite", "luxury-suite", "executive-suite"].includes(room.id)
+    ["standard-room", "deluxe-room", "family-suite"].includes(room.id)
   );
 
   return (

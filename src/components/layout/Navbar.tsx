@@ -9,6 +9,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useScroll } from "../../hooks/useScroll";
 import { NAVIGATION_ITEMS } from "../../constants/data";
 import { Button } from "../ui/Button";
+import { AnnouncementTicker } from "./AnnouncementTicker";
 
 export const Navbar: React.FC = () => {
   const scrolled = useScroll(80);
@@ -34,13 +35,18 @@ export const Navbar: React.FC = () => {
 
   return (
     <>
+      {/* Announcement ticker strip — pinned at very top */}
+      <div className="fixed top-0 left-0 right-0 z-50">
+        <AnnouncementTicker />
+      </div>
+
       <motion.nav
         initial="hidden"
         animate="visible"
         variants={navVariants}
-        className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 w-full ${scrolled
-            ? "bg-[#111111]/97 backdrop-blur-md border-b border-white/10 shadow-md py-3"
-            : "bg-gradient-to-b from-black/70 to-transparent py-5"
+        className={`fixed top-[30px] left-0 right-0 z-40 transition-all duration-300 w-full ${scrolled || pathname !== "/"
+          ? "bg-[#111111]/97 backdrop-blur-md border-b border-white/10 shadow-md py-3"
+          : "bg-gradient-to-b from-black/70 to-transparent py-5"
           }`}
       >
         <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
@@ -65,8 +71,8 @@ export const Navbar: React.FC = () => {
                   href={item.href}
                   aria-current={isActive ? "page" : undefined}
                   className={`text-xs uppercase tracking-widest transition-all duration-300 hover:text-white px-3 py-2 rounded-full ${isActive
-                      ? "text-white bg-red-600 font-semibold shadow-[0_0_0_1px_rgba(225,29,53,0.4)]"
-                      : "text-stone-200 hover:bg-white/10"
+                    ? "text-white bg-red-600 font-semibold shadow-[0_0_0_1px_rgba(225,29,53,0.4)]"
+                    : "text-stone-200 hover:bg-white/10"
                     }`}
                 >
                   {item.name}
@@ -146,8 +152,8 @@ export const Navbar: React.FC = () => {
                         onClick={closeMenu}
                         aria-current={isActive ? "page" : undefined}
                         className={`text-sm uppercase tracking-widest font-sans font-normal transition-all duration-300 px-3 py-2 rounded-md ${isActive
-                            ? "text-white bg-red-600 font-semibold"
-                            : "text-stone-200 hover:text-white hover:bg-white/5"
+                          ? "text-white bg-red-600 font-semibold"
+                          : "text-stone-200 hover:text-white hover:bg-white/5"
                           }`}
                       >
                         {item.name}

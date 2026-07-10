@@ -120,12 +120,12 @@ export const BookingForm: React.FC<BookingFormProps> = ({ initialRoomSlug = "" }
     const roomsCount = Number(watchedRoomsCount) || 1;
     const baseTotal = selectedRoom.price * nights * roomsCount;
 
-    // Apply Coupon Code: LUXURY10 gives 10%, WELCOME gives 50$ off
+    // Apply Coupon Code: LUXURY10 gives 10%, WELCOME500 gives ₹500 off
     let discount = 0;
     if (watchedCoupon?.toUpperCase() === "LUXURY10") {
       discount = baseTotal * 0.1;
-    } else if (watchedCoupon?.toUpperCase() === "WELCOME50") {
-      discount = Math.min(50 * roomsCount, baseTotal);
+    } else if (watchedCoupon?.toUpperCase() === "WELCOME500") {
+      discount = Math.min(500 * roomsCount, baseTotal);
     }
 
     const taxRate = 0.12; // 12% Hotel Room Taxes
@@ -482,7 +482,7 @@ export const BookingForm: React.FC<BookingFormProps> = ({ initialRoomSlug = "" }
             <div className="flex justify-between text-stone-600">
               <span>Rooms Selection Rate</span>
               <span>
-                {selectedRoom ? `${formatPrice(selectedRoom.price)} / night` : "$0"}
+                {selectedRoom ? `${formatPrice(selectedRoom.price)} / night` : formatPrice(0)}
               </span>
             </div>
             <div className="flex justify-between text-stone-600">

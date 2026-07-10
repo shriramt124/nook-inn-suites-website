@@ -2,21 +2,21 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { Waves, Sparkles, UtensilsCrossed, Dumbbell, Wifi, Briefcase, Car, Plane } from "lucide-react";
+import { Sparkles, UtensilsCrossed, Wifi, Briefcase, Car, Salad, ArrowUpDown, Accessibility } from "lucide-react";
 import { HOTEL_FACILITIES } from "../../constants/data";
 import { SectionTitle } from "../shared/SectionTitle";
 import { Card, CardBody } from "../ui/Card";
 
 // Map string keys to Lucide React component objects
 const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
-  Waves,
   Sparkles,
   UtensilsCrossed,
-  Dumbbell,
   Wifi,
   Briefcase,
   Car,
-  Plane,
+  Salad,
+  ArrowUpDown,
+  Accessibility,
 };
 
 export const Facilities: React.FC = () => {
@@ -24,9 +24,9 @@ export const Facilities: React.FC = () => {
     <section className="py-20 md:py-28 bg-[#f9f9f9]">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <SectionTitle
-          title="World-Class Facilities &amp; Experiences"
-          subtitle="Resort Offerings"
-          description="Every facility at Nook Inn has been sculpted to meet world-class standards, offering guests a range of elite activities, wellness programs, and culinary ventures."
+          title="Everything You Need, Under One Roof"
+          subtitle="Hotel Facilities"
+          description="Nook Inn & Suites is designed for comfort, convenience, and celebration — from a fully equipped conference room and rooftop party venue to a lush garden breakfast area and accessible facilities for all guests."
         />
 
         {/* Facilities Grid */}

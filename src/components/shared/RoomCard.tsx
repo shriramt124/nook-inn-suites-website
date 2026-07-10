@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Star, Maximize2, Users, BedDouble, ChevronLeft, ChevronRight, Check } from "lucide-react";
+import { Star, Maximize2, ChevronLeft, ChevronRight, Check } from "lucide-react";
 import { Room } from "../../types";
 import { cn, formatPrice } from "../../lib/utils";
 import { Button } from "../ui/Button";
@@ -104,21 +104,7 @@ export const RoomCard: React.FC<RoomCardProps> = ({ room, onCompareToggle, isCom
           {room.description}
         </p>
 
-        {/* Dimensions/Key Grid */}
-        <div className="grid grid-cols-3 gap-2 border-y border-stone-100 py-3.5 mb-5 text-[10px] md:text-xs text-stone-600 font-sans tracking-wide uppercase">
-          <div className="flex items-center space-x-1.5">
-            <Maximize2 className="h-3.5 w-3.5 text-stone-500 shrink-0" />
-            <span>{room.size}</span>
-          </div>
-          <div className="flex items-center space-x-1.5 justify-center border-x border-stone-100">
-            <Users className="h-3.5 w-3.5 text-stone-500 shrink-0" />
-            <span>Max {room.maxGuests} guests</span>
-          </div>
-          <div className="flex items-center space-x-1.5 justify-end">
-            <BedDouble className="h-3.5 w-3.5 text-stone-500 shrink-0" />
-            <span className="truncate">{room.bedType}</span>
-          </div>
-        </div>
+
 
         {/* Amenities Icons Row */}
         <div className="flex flex-wrap gap-1.5 mb-6">

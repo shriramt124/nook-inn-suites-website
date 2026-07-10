@@ -57,7 +57,7 @@ export interface GalleryImage {
   id: string;
   url: string;
   title: string;
-  category: "rooms" | "spa" | "dining" | "exterior" | "interior";
+  category: "rooms" | "dining" | "exterior" | "interior";
 }
 
 export interface Facility {

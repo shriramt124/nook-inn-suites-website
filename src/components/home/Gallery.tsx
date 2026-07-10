@@ -11,7 +11,7 @@ export const Gallery: React.FC = () => {
   const [filter, setFilter] = useState<string>("all");
   const [activeImageIndex, setActiveImageIndex] = useState<number | null>(null);
 
-  const categories = ["all", "rooms", "spa", "dining", "exterior"];
+  const categories = ["all", "rooms", "dining", "exterior"];
 
   // Filter images
   const filteredImages = GALLERY_IMAGES.filter((img) =>
@@ -42,7 +42,7 @@ export const Gallery: React.FC = () => {
         <SectionTitle
           title="Capturing Our Signature Moments"
           subtitle="Visual Gallery"
-          description="Immerse yourself in Nook Inn & Suites through our curated gallery. Explore the intricate designs, tranquil wellness rooms, and bespoke culinary creations."
+          description="Immerse yourself in Nook Inn & Suites through our curated gallery. Explore the intricate designs, scenic garden areas, and bespoke culinary creations."
         />
 
         {/* Filter Navigation Tabs */}

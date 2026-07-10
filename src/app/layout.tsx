@@ -1,19 +1,5 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
-
-const cormorant = Cormorant_Garamond({
-  variable: "--font-serif",
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-  style: ["normal", "italic"],
-});
-
-const jakarta = Plus_Jakarta_Sans({
-  variable: "--font-sans",
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700", "800"],
-});
 
 export const metadata: Metadata = {
   title: "Nook Inn & Suites | Luxury Boutique Hotel",
@@ -44,9 +30,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body
-        className={`${cormorant.variable} ${jakarta.variable} font-sans antialiased bg-background text-foreground selection:bg-gold-200 selection:text-primary-900`}
-      >
+      <body className="font-sans antialiased bg-background text-foreground">
         {children}
       </body>
     </html>

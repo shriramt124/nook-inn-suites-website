@@ -101,7 +101,7 @@ export default function RoomsPage() {
     <>
       <Navbar />
 
-      <main className="min-h-screen pt-28 pb-20 bg-[#faf9f6]">
+      <main className="min-h-screen pt-36 pb-20 bg-[#faf9f6]">
         {/* Banner header */}
         <div className="bg-primary-950 py-16 text-center relative overflow-hidden mb-12">
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(12,35,64,0.6),rgba(0,0,0,0.8))]" />
