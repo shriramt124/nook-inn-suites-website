@@ -10,11 +10,11 @@ export const NAVIGATION_ITEMS: NavigationItem[] = [
 export const HOTEL_CONTACT_INFO = {
   address:
     "L-32/4, Mehrauli-Gurgaon Road, near MG Road, DLF Phase 2, Sector 25, Gurugram, Haryana 122002",
-  phone: "+91 124 000 0000",
+  phone: "+91 93104 11885",
   email: "reservations@nookinnsuites.com",
   receptionTiming: "24 Hours / 7 Days a week",
   businessHours: "Monday - Sunday: 9:00 AM - 10:00 PM (Spa & Dining)",
-  emergencyContact: "+91 124 000 0009",
+  emergencyContact: "+91 98718 86306",
   mapUrl: "https://maps.app.goo.gl/6e87fnNYiDdhA5Xg7",
 };
 

@@ -11,6 +11,13 @@ import { Gallery } from "../components/home/Gallery";
 import { Testimonials } from "../components/home/Testimonials";
 import { WhyChooseUs } from "../components/home/WhyChooseUs";
 import { Button } from "../components/ui/Button";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Best Hotel Near MG Road Metro & Cyber City | Nook Inn & Suites Gurgaon",
+  description: "Looking for a luxury or budget hotel near Cyber City or DLF Phase 2? Nook Inn & Suites offers premium rooms, banquets, and corporate booking deals in Gurugram.",
+  keywords: "hotel near mg road metro, best hotel in dlf phase 2, hotel near cyber city gurgaon, luxury hotel gurgaon, corporate booking hotel gurugram",
+};
 
 export default function HomePage() {
   return (

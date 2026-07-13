@@ -3,7 +3,7 @@ import { MetadataRoute } from "next";
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://nookinnsuites.com";
   
-  const routes = ["", "/rooms", "/bookings", "/contact", "/about"];
+  const routes = ["", "/rooms", "/bookings", "/contact", "/about", "/ad"];
   
   return routes.map((route) => ({
     url: `${baseUrl}${route}`,

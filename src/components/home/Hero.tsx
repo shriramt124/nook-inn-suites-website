@@ -29,7 +29,7 @@ const SLIDES = [
     headingAccent: "Home Away From Home",
     subtext:
       "Unwind in one of our 22 thoughtfully designed rooms — Comfort, Premium, Family Suites & private Cottages tailored for every kind of traveller.",
-    image: "/Nook GGN/_A3A1254-HDR.jpg",
+    image: "/Nook GGN/first_slide.png",
     intent: "Luxury Stay",
     perks: [
       { icon: Wifi, label: "High-Speed WiFi" },

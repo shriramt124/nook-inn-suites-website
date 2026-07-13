@@ -8,6 +8,13 @@ import { StatsCard } from "../../components/shared/StatsCard";
 import { Button } from "../../components/ui/Button";
 import { ShieldCheck, Heart, Leaf, Award } from "lucide-react";
 import { Card, CardBody } from "../../components/ui/Card";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "About Us | Top Boutique Hotel in DLF Phase 2, Gurugram",
+  description: "Learn more about Nook Inn & Suites, a premier 4-star boutique hotel near MG Road Metro Station in Gurugram offering luxury rooms and corporate hospitality.",
+  keywords: "about nook inn suites, boutique hotel dlf phase 2, 4-star hotel gurgaon",
+};
 
 export default function AboutPage() {
   const coreValues = [

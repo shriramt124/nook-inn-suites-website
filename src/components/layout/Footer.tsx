@@ -90,11 +90,16 @@ export const Footer: React.FC = () => {
             <li className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
                 <span className="text-red-400 font-normal uppercase tracking-wider text-[10px] block mb-0.5">
-                  Direct Line
+                  Direct Lines
                 </span>
-                <a href={`tel:${HOTEL_CONTACT_INFO.phone}`} className="hover:text-red-400 transition-colors">
-                  {HOTEL_CONTACT_INFO.phone}
-                </a>
+                <div className="flex flex-col space-y-1">
+                  <a href={`tel:${HOTEL_CONTACT_INFO.phone}`} className="hover:text-red-400 transition-colors block">
+                    {HOTEL_CONTACT_INFO.phone}
+                  </a>
+                  <a href={`tel:${HOTEL_CONTACT_INFO.emergencyContact}`} className="hover:text-red-400 transition-colors block">
+                    {HOTEL_CONTACT_INFO.emergencyContact}
+                  </a>
+                </div>
               </div>
               <div>
                 <span className="text-red-400 font-normal uppercase tracking-wider text-[10px] block mb-0.5">
@@ -177,8 +182,18 @@ export const Footer: React.FC = () => {
         </div>
       </div>
 
+      {/* Local SEO Text Block */}
+      <div className="bg-[#111111] py-8 border-t border-white/5 text-stone-500 text-[10px] font-sans text-center px-6">
+        <p className="max-w-4xl mx-auto leading-relaxed">
+          Nook Inn &amp; Suites is a premier budget and luxury hotel located in DLF Phase 2, Gurugram. 
+          Conveniently situated near MG Road Metro Station, Cyber City, and Ambience Mall, we offer 
+          the perfect blend of comfort and connectivity for both business travelers and families. 
+          Experience world-class hospitality, 24x7 reception, and premium banqueting in the heart of Gurgaon.
+        </p>
+      </div>
+
       {/* Bottom Legal / Copyright Section */}
-      <div className="bg-[#0a0a0a] py-8 border-t border-white/5 text-stone-500 text-xs font-normal font-sans">
+      <div className="bg-[#0a0a0a] py-6 border-t border-white/5 text-stone-600 text-xs font-normal font-sans">
         <div className="max-w-7xl mx-auto px-6 md:px-12 flex flex-col md:flex-row justify-between items-center gap-4">
           <p>&copy; {new Date().getFullYear()} Nook Inn &amp; Suites. All rights reserved.</p>
           <div className="flex space-x-6">

@@ -6,6 +6,13 @@ import { FAQ } from "../../components/contact/FAQ";
 import { HOTEL_CONTACT_INFO } from "../../constants/data";
 import { MapPin, Phone, Mail, Clock, ShieldAlert, Navigation } from "lucide-react";
 import { Card } from "../../components/ui/Card";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Contact Us | Nook Inn & Suites Gurugram",
+  description: "Get in touch with Nook Inn & Suites for bookings, corporate events, and inquiries. Located in DLF Phase 2 near MG Road Metro, Gurugram.",
+  keywords: "contact nook inn suites, hotel booking gurgaon, reach hotel dlf phase 2, mg road hotel phone number",
+};
 
 export default function ContactPage() {
   return (
@@ -84,7 +91,9 @@ export default function ContactPage() {
                   <ShieldAlert className="h-5 w-5 text-red-500 shrink-0 mt-0.5" />
                   <div>
                     <span className="font-bold text-red-600 uppercase text-[10px] tracking-wider block">VIP Priority Line</span>
-                    {HOTEL_CONTACT_INFO.emergencyContact}
+                    <a href={`tel:${HOTEL_CONTACT_INFO.emergencyContact}`} className="hover:text-red-600 transition-colors">
+                      {HOTEL_CONTACT_INFO.emergencyContact}
+                    </a>
                   </div>
                 </div>
               </div>
