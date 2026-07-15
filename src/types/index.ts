@@ -1,8 +1,16 @@
+export interface RoomPricing {
+  base: number; // single-occupancy base rate (per night)
+  doubleSupplement: number; // added when 2+ guests (per night)
+  breakfastPerPerson: number; // charged per person (per night)
+  extraPerson: number; // charged per guest beyond 2 (per night)
+}
+
 export interface Room {
   id: string;
   name: string;
   slug: string;
-  price: number;
+  price: number; // single-occupancy base rate (mirrors pricing.base) — used for card display & sorting
+  pricing: RoomPricing;
   rating: number;
   reviewsCount: number;
   description: string;

@@ -11,7 +11,6 @@ export async function POST(req: NextRequest) {
       phone,
       country,
       roomName,
-      roomPrice,
       checkIn,
       checkOut,
       adults,
@@ -51,8 +50,8 @@ export async function POST(req: NextRequest) {
     <div style="margin-top:24px;background:#f9f9f9;border:1px solid #e5e5e5;padding:20px;">
       <p style="color:#999;font-size:11px;text-transform:uppercase;letter-spacing:1px;margin:0 0 12px;">Pricing Breakdown</p>
       <table width="100%" cellpadding="0" cellspacing="0">
-        <tr><td style="color:#444;font-size:13px;padding:4px 0;">Room Rate</td><td align="right" style="color:#111;font-size:13px;">₹${roomPrice?.toLocaleString("en-IN")} / night</td></tr>
-        <tr><td style="color:#444;font-size:13px;padding:4px 0;">Base Total</td><td align="right" style="color:#111;font-size:13px;">₹${pricing.baseTotal?.toLocaleString("en-IN")}</td></tr>
+        <tr><td style="color:#444;font-size:13px;padding:4px 0;">Rate / Night</td><td align="right" style="color:#111;font-size:13px;">₹${pricing.ratePerNight?.toLocaleString("en-IN")} (${adults} adult${adults > 1 ? "s" : ""}${children > 0 ? `, ${children} child${children > 1 ? "ren" : ""}` : ""})</td></tr>
+        <tr><td style="color:#444;font-size:13px;padding:4px 0;">Subtotal (${pricing.nights} night${pricing.nights !== 1 ? "s" : ""} × ${numberOfRooms} room${Number(numberOfRooms) > 1 ? "s" : ""})</td><td align="right" style="color:#111;font-size:13px;">₹${pricing.baseTotal?.toLocaleString("en-IN")}</td></tr>
         ${pricing.discount > 0 ? `<tr><td style="color:#e11d35;font-size:13px;padding:4px 0;">Discount</td><td align="right" style="color:#e11d35;font-size:13px;">-₹${pricing.discount?.toLocaleString("en-IN")}</td></tr>` : ""}
         <tr><td style="color:#444;font-size:13px;padding:4px 0;">Taxes (12%)</td><td align="right" style="color:#111;font-size:13px;">₹${pricing.taxes?.toLocaleString("en-IN")}</td></tr>
         <tr><td colspan="2"><hr style="border:none;border-top:1px solid #e5e5e5;margin:8px 0;" /></td></tr>

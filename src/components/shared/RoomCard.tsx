@@ -130,6 +130,9 @@ export const RoomCard: React.FC<RoomCardProps> = ({ room, onCompareToggle, isCom
               {formatPrice(room.price)}
               <span className="text-xs font-sans text-stone-600"> / night</span>
             </span>
+            <span className="text-[9px] leading-relaxed text-stone-400 font-sans mt-0.5">
+              Single occ. · +{formatPrice(room.pricing.doubleSupplement)} double · +{formatPrice(room.pricing.breakfastPerPerson)} breakfast/pp · +{formatPrice(room.pricing.extraPerson)} extra guest
+            </span>
           </div>
 
           <div className="flex items-center space-x-2">

@@ -281,6 +281,16 @@ export default function RoomsPage() {
                     ))}
                   </tr>
                   <tr>
+                    <td className="py-3.5 font-medium text-stone-800">Occupancy Rates</td>
+                    {comparedRooms.map((room) => (
+                      <td key={room.id} className="py-3.5 text-xs text-stone-600 space-y-0.5">
+                        <div>Base: {formatPrice(room.pricing.base)}</div>
+                        <div>+{formatPrice(room.pricing.doubleSupplement)} double · +{formatPrice(room.pricing.breakfastPerPerson)} breakfast/pp</div>
+                        <div>+{formatPrice(room.pricing.extraPerson)} extra guest</div>
+                      </td>
+                    ))}
+                  </tr>
+                  <tr>
                     <td className="py-3.5 font-medium text-stone-800">Room Size</td>
                     {comparedRooms.map((room) => (
                       <td key={room.id} className="py-3.5">

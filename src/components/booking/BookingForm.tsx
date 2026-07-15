@@ -8,7 +8,7 @@ import * as z from "zod";
 import { Calendar, Users, Home, ClipboardList, User, Mail, Phone, Globe, Tag, Printer, CheckCircle } from "lucide-react";
 import { MOCK_ROOMS } from "../../constants/data";
 import { Room } from "../../types";
-import { formatPrice } from "../../lib/utils";
+import { formatPrice, calculateRoomRate } from "../../lib/utils";
 import { Input } from "../ui/Input";
 import { Select } from "../ui/Select";
 import { Button } from "../ui/Button";
@@ -53,6 +53,7 @@ export const BookingForm: React.FC<BookingFormProps> = ({ initialRoomSlug = "" }
   const [selectedRoom, setSelectedRoom] = useState<Room | null>(null);
   const [pricing, setPricing] = useState({
     nights: 0,
+    ratePerNight: 0,
     baseTotal: 0,
     discount: 0,
     taxes: 0,
@@ -92,6 +93,8 @@ export const BookingForm: React.FC<BookingFormProps> = ({ initialRoomSlug = "" }
   const watchedCheckOut = watch("checkOut");
   const watchedRoomType = watch("roomType");
   const watchedRoomsCount = watch("numberOfRooms");
+  const watchedAdults = watch("adults");
+  const watchedChildren = watch("children");
   const watchedCoupon = watch("couponCode");
 
   // Sync selected room details
@@ -103,7 +106,7 @@ export const BookingForm: React.FC<BookingFormProps> = ({ initialRoomSlug = "" }
   // Sync calculations on field change
   useEffect(() => {
     if (!watchedCheckIn || !watchedCheckOut || !selectedRoom) {
-      setPricing({ nights: 0, baseTotal: 0, discount: 0, taxes: 0, grandTotal: 0 });
+      setPricing({ nights: 0, ratePerNight: 0, baseTotal: 0, discount: 0, taxes: 0, grandTotal: 0 });
       return;
     }
 
@@ -113,12 +116,16 @@ export const BookingForm: React.FC<BookingFormProps> = ({ initialRoomSlug = "" }
     const nights = Math.ceil(timeDiff / (1000 * 3600 * 24));
 
     if (nights <= 0) {
-      setPricing({ nights: 0, baseTotal: 0, discount: 0, taxes: 0, grandTotal: 0 });
+      setPricing({ nights: 0, ratePerNight: 0, baseTotal: 0, discount: 0, taxes: 0, grandTotal: 0 });
       return;
     }
 
     const roomsCount = Number(watchedRoomsCount) || 1;
-    const baseTotal = selectedRoom.price * nights * roomsCount;
+    const adults = Number(watchedAdults) || 1;
+    const children = Number(watchedChildren) || 0;
+
+    const rateBreakdown = calculateRoomRate(selectedRoom, adults, children);
+    const baseTotal = rateBreakdown.perNight * nights * roomsCount;
 
     // Apply Coupon Code: LUXURY10 gives 10%, WELCOME500 gives ₹500 off
     let discount = 0;
@@ -134,12 +141,13 @@ export const BookingForm: React.FC<BookingFormProps> = ({ initialRoomSlug = "" }
 
     setPricing({
       nights,
+      ratePerNight: rateBreakdown.perNight,
       baseTotal,
       discount,
       taxes,
       grandTotal,
     });
-  }, [watchedCheckIn, watchedCheckOut, selectedRoom, watchedRoomsCount, watchedCoupon]);
+  }, [watchedCheckIn, watchedCheckOut, selectedRoom, watchedRoomsCount, watchedAdults, watchedChildren, watchedCoupon]);
 
   const onSubmit = async (data: BookingFormValues) => {
     const generatedId = `NKS-${Math.floor(100000 + Math.random() * 900000)}`;
@@ -154,7 +162,6 @@ export const BookingForm: React.FC<BookingFormProps> = ({ initialRoomSlug = "" }
           phone: data.phone,
           country: data.country,
           roomName: selectedRoom?.name,
-          roomPrice: selectedRoom?.price,
           checkIn: data.checkIn,
           checkOut: data.checkOut,
           adults: data.adults,
@@ -237,10 +244,27 @@ export const BookingForm: React.FC<BookingFormProps> = ({ initialRoomSlug = "" }
 
             {/* Calculations Breakdown */}
             <div className="space-y-3 pt-4 text-sm font-sans">
-              <div className="flex justify-between text-stone-600">
-                <span>Room Rate ({pricing.nights} nights x {submittedData.numberOfRooms} room)</span>
-                <span>{formatPrice(selectedRoom.price * pricing.nights * submittedData.numberOfRooms)}</span>
-              </div>
+              {(() => {
+                const breakdown = calculateRoomRate(selectedRoom, submittedData.adults, submittedData.children);
+                return (
+                  <>
+                    {breakdown.lines.map((line) => (
+                      <div key={line.label} className="flex justify-between text-stone-600">
+                        <span>{line.label}</span>
+                        <span>{formatPrice(line.amount)}</span>
+                      </div>
+                    ))}
+                    <div className="flex justify-between text-stone-800 font-medium">
+                      <span>Rate per Night</span>
+                      <span>{formatPrice(breakdown.perNight)}</span>
+                    </div>
+                    <div className="flex justify-between text-stone-600">
+                      <span>Subtotal ({pricing.nights} nights × {submittedData.numberOfRooms} room)</span>
+                      <span>{formatPrice(pricing.baseTotal)}</span>
+                    </div>
+                  </>
+                );
+              })()}
               {pricing.discount > 0 && (
                 <div className="flex justify-between text-green-600 font-medium">
                   <span>Promo Discount Applied</span>
@@ -286,7 +310,7 @@ export const BookingForm: React.FC<BookingFormProps> = ({ initialRoomSlug = "" }
   // Room selections options
   const roomTypeOptions = MOCK_ROOMS.map((room) => ({
     value: room.slug,
-    label: `${room.name} (${formatPrice(room.price)} / night)`,
+    label: `${room.name} (from ${formatPrice(room.price)} / night)`,
   }));
 
   const roomCountOptions = [
@@ -503,11 +527,29 @@ export const BookingForm: React.FC<BookingFormProps> = ({ initialRoomSlug = "" }
 
           {/* Checkout pricing breakdowns list */}
           <div className="space-y-3.5 text-xs sm:text-sm font-sans font-normal">
+            {(() => {
+              if (!selectedRoom) return null;
+              const adults = Number(watchedAdults) || 1;
+              const children = Number(watchedChildren) || 0;
+              const breakdown = calculateRoomRate(selectedRoom, adults, children);
+              return (
+                <>
+                  {breakdown.lines.map((line) => (
+                    <div key={line.label} className="flex justify-between text-stone-600">
+                      <span>{line.label}</span>
+                      <span>{formatPrice(line.amount)}</span>
+                    </div>
+                  ))}
+                  <div className="flex justify-between text-stone-800 font-medium">
+                    <span>Rate / Night</span>
+                    <span>{formatPrice(breakdown.perNight)}</span>
+                  </div>
+                </>
+              );
+            })()}
             <div className="flex justify-between text-stone-600">
-              <span>Rooms Selection Rate</span>
-              <span>
-                {selectedRoom ? `${formatPrice(selectedRoom.price)} / night` : formatPrice(0)}
-              </span>
+              <span>Nights × Rooms</span>
+              <span>{pricing.nights} night(s) × {watchedRoomsCount || 1}</span>
             </div>
             <div className="flex justify-between text-stone-600">
               <span>Nights Count</span>
