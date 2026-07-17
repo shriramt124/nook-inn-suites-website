@@ -185,14 +185,14 @@ export const BookingForm: React.FC<BookingFormProps> = ({ initialRoomSlug = "" }
   // Success view block
   if (isSubmitted && submittedData && selectedRoom) {
     return (
-      <div className="max-w-3xl mx-auto py-12 px-6">
+      <div className="max-w-3xl mx-auto py-8 sm:py-12 px-4 sm:px-6">
         <Toast
           isVisible={showToast}
           message={`Reservation confirmed successfully. ID: ${bookingId}`}
           type="success"
           onClose={() => setShowToast(false)}
         />
-        <Card variant="default" className="border border-stone-200 shadow-2xl rounded-none p-8 md:p-12 bg-white">
+        <Card variant="default" className="border border-stone-200 shadow-2xl rounded-none p-5 sm:p-8 md:p-12 bg-white">
           <div className="flex flex-col items-center text-center space-y-4 mb-8">
             <div className="p-3 bg-green-50 text-green-600 rounded-full">
               <CheckCircle className="h-12 w-12" />
@@ -337,11 +337,11 @@ export const BookingForm: React.FC<BookingFormProps> = ({ initialRoomSlug = "" }
   ];
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start max-w-7xl mx-auto px-6 py-12">
+    <form onSubmit={handleSubmit(onSubmit)} className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-start max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
       {/* Left side: Booking details input fields */}
-      <div className="lg:col-span-8 bg-white border border-stone-200/60 p-6 md:p-8 space-y-8 shadow-sm">
+      <div className="lg:col-span-8 bg-white border border-stone-200/60 p-4 sm:p-6 md:p-8 space-y-6 sm:space-y-8 shadow-sm">
         {/* Step 1: Stay & Suite Selection */}
-        <div className="space-y-6">
+        <div className="space-y-5 sm:space-y-6">
           <div className="flex items-center space-x-3 mb-2">
             <span className="h-6 w-6 rounded-full bg-gold-500 text-white flex items-center justify-center text-xs font-bold font-sans">
               1
@@ -351,7 +351,7 @@ export const BookingForm: React.FC<BookingFormProps> = ({ initialRoomSlug = "" }
             </h3>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
             {/* Check-In Date */}
             <Input
               type="date"
@@ -371,7 +371,7 @@ export const BookingForm: React.FC<BookingFormProps> = ({ initialRoomSlug = "" }
             />
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             {/* Room Type */}
             <div className="sm:col-span-2">
               <Select
@@ -402,7 +402,7 @@ export const BookingForm: React.FC<BookingFormProps> = ({ initialRoomSlug = "" }
             />
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
             {/* Children Count */}
             <Select
               label="Child Guests"
@@ -436,7 +436,7 @@ export const BookingForm: React.FC<BookingFormProps> = ({ initialRoomSlug = "" }
             </h3>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
             {/* Guest Name */}
             <Input
               placeholder="Enter your full name"
@@ -457,7 +457,7 @@ export const BookingForm: React.FC<BookingFormProps> = ({ initialRoomSlug = "" }
             />
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
             {/* Guest Phone */}
             <Input
               placeholder="e.g. +1 (555) 000-0000"

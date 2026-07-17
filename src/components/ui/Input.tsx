@@ -25,13 +25,13 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
             className={cn(
               "w-full px-4 py-3 bg-white border border-stone-200 text-stone-800 text-sm font-sans placeholder:text-stone-400 transition-all duration-300 rounded-none focus:outline-none focus:border-gold-500 focus:ring-1 focus:ring-gold-500/30",
               icon && "pl-11",
-              error && "border-red-500 focus:border-red-500 focus:ring-red-500/30",
+              error && "border-gold-500 focus:border-gold-500 focus:ring-gold-500/30",
               className
             )}
             {...props}
           />
         </div>
-        {error && <span className="text-xs text-red-500 mt-0.5 font-medium">{error}</span>}
+        {error && <span className="text-xs text-gold-500 mt-0.5 font-medium">{error}</span>}
         {!error && helperText && <span className="text-xs text-stone-500 mt-0.5">{helperText}</span>}
       </div>
     );

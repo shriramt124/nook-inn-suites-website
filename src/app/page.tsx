@@ -4,6 +4,7 @@ import Image from "next/image";
 import { Navbar } from "../components/layout/Navbar";
 import { Footer } from "../components/layout/Footer";
 import { Hero } from "../components/home/Hero";
+import { PropertyTour } from "../components/home/PropertyTour";
 import { AboutHotel } from "../components/home/AboutHotel";
 import { FeaturedRooms } from "../components/home/FeaturedRooms";
 import { Facilities } from "../components/home/Facilities";
@@ -27,6 +28,9 @@ export default function HomePage() {
       <main className="min-h-screen">
         {/* Full-width interactive Hero Banner */}
         <Hero />
+
+        {/* Virtual Property Tour Video */}
+        <PropertyTour />
 
         {/* About Resort Intro & Counters */}
         <AboutHotel />
@@ -57,17 +61,17 @@ export default function HomePage() {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#0f0f0f] via-[#0f0f0f]/70 to-transparent" />
             {/* Red warmth overlay */}
-            <div className="absolute inset-0 bg-red-900/10" />
+            <div className="absolute inset-0 bg-gold-900/10" />
           </div>
 
           <div className="relative z-10 max-w-4xl mx-auto px-6 text-center space-y-6 flex flex-col items-center">
-            <span className="text-xs uppercase tracking-[0.45em] text-red-400 font-semibold">
+            <span className="text-xs uppercase tracking-[0.45em] text-gold-400 font-semibold">
               Bespoke Escape
             </span>
             <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-light tracking-wide text-white leading-tight">
               Reserve Your Dream Stay
             </h2>
-            <div className="w-12 h-[1px] bg-red-500/50" />
+            <div className="w-12 h-[1px] bg-gold-500/50" />
             <p className="text-stone-300 text-sm md:text-base font-sans font-light max-w-xl leading-relaxed">
               Book directly with Nook Inn & Suites to receive priority room upgrades, complementary airport chauffeurs, and access to VIP pool cabanas.
             </p>

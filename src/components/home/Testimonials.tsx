@@ -20,7 +20,7 @@ export const Testimonials: React.FC = () => {
   return (
     <section className="py-20 md:py-28 bg-[#111111] relative overflow-hidden text-white">
       {/* Background Decorative Glow — subtle red */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-red-700/5 rounded-full blur-[140px] pointer-events-none -z-10" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-gold-700/5 rounded-full blur-[140px] pointer-events-none -z-10" />
 
       <div className="max-w-4xl mx-auto px-6 text-center flex flex-col items-center">
         <SectionTitle
@@ -31,7 +31,7 @@ export const Testimonials: React.FC = () => {
         />
 
         {/* Quote Icon detail */}
-        <Quote className="h-10 w-10 text-red-500/40 mb-8 stroke-[1]" />
+        <Quote className="h-10 w-10 text-gold-500/40 mb-8 stroke-[1]" />
 
         {/* Carousel Slider */}
         <div className="relative min-h-[220px] w-full flex items-center justify-center">
@@ -47,7 +47,7 @@ export const Testimonials: React.FC = () => {
               {/* Rating stars */}
               <div className="flex items-center justify-center space-x-1.5">
                 {Array.from({ length: MOCK_TESTIMONIALS[activeIndex].rating }).map((_, i) => (
-                  <Star key={i} className="h-4 w-4 fill-red-500 text-red-500" />
+                  <Star key={i} className="h-4 w-4 fill-gold-500 text-gold-500" />
                 ))}
               </div>
 
@@ -61,7 +61,7 @@ export const Testimonials: React.FC = () => {
                 <p className="font-sans font-semibold text-white tracking-widest uppercase text-xs">
                   {MOCK_TESTIMONIALS[activeIndex].guestName}
                 </p>
-                <p className="text-[10px] text-red-400 uppercase tracking-widest mt-1">
+                <p className="text-[10px] text-gold-400 uppercase tracking-widest mt-1">
                   {MOCK_TESTIMONIALS[activeIndex].guestCountry}
                 </p>
               </div>
@@ -73,7 +73,7 @@ export const Testimonials: React.FC = () => {
         <div className="flex items-center space-x-6 mt-10">
           <button
             onClick={handlePrev}
-            className="p-2 border border-white/15 hover:border-red-500 rounded-none text-stone-300 hover:text-white transition-colors cursor-pointer"
+            className="p-2 border border-white/15 hover:border-gold-500 rounded-none text-stone-300 hover:text-white transition-colors cursor-pointer"
             aria-label="Previous review"
           >
             <ChevronLeft className="h-4 w-4" />
@@ -84,7 +84,7 @@ export const Testimonials: React.FC = () => {
                 key={idx}
                 onClick={() => setActiveIndex(idx)}
                 className={`h-1.5 rounded-full transition-all duration-300 cursor-pointer ${
-                  idx === activeIndex ? "w-6 bg-red-500" : "w-1.5 bg-white/20"
+                  idx === activeIndex ? "w-6 bg-gold-500" : "w-1.5 bg-white/20"
                 }`}
                 aria-label={`Go to slide ${idx + 1}`}
               />
@@ -92,7 +92,7 @@ export const Testimonials: React.FC = () => {
           </div>
           <button
             onClick={handleNext}
-            className="p-2 border border-white/15 hover:border-red-500 rounded-none text-stone-300 hover:text-white transition-colors cursor-pointer"
+            className="p-2 border border-white/15 hover:border-gold-500 rounded-none text-stone-300 hover:text-white transition-colors cursor-pointer"
             aria-label="Next review"
           >
             <ChevronRight className="h-4 w-4" />

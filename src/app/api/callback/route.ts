@@ -26,8 +26,8 @@ export async function POST(req: NextRequest) {
       </p>
       ${fields}
       <div style="margin-top:24px;padding:16px 20px;background:#fff4f5;border:1px solid #fecdd5;border-radius:4px;">
-        <p style="color:#e11d35;font-size:13px;margin:0;font-weight:600;">
-          ⚡ Please call <a href="tel:${phone}" style="color:#e11d35;">${phone}</a> at the earliest to follow up on this lead.
+        <p style="color:#dc2626;font-size:13px;margin:0;font-weight:600;">
+          ⚡ Please call <a href="tel:${phone}" style="color:#dc2626;">${phone}</a> at the earliest to follow up on this lead.
         </p>
       </div>
       `

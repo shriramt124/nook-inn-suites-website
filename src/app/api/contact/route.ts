@@ -24,12 +24,12 @@ export async function POST(req: NextRequest) {
         A new contact inquiry has been submitted through the Nook Inn &amp; Suites website.
       </p>
       ${fields}
-      <div style="margin-top:24px;background:#f9f9f9;border-left:4px solid #e11d35;padding:16px 20px;">
+      <div style="margin-top:24px;background:#f9f9f9;border-left:4px solid #dc2626;padding:16px 20px;">
         <p style="color:#999;font-size:11px;text-transform:uppercase;letter-spacing:1px;margin:0 0 6px;">Message</p>
         <p style="color:#111;font-size:14px;margin:0;line-height:1.6;">${message.replace(/\n/g, "<br/>")}</p>
       </div>
       <p style="margin-top:28px;color:#666;font-size:12px;">
-        Please reply directly to <a href="mailto:${email}" style="color:#e11d35;">${email}</a> to respond to this inquiry.
+        Please reply directly to <a href="mailto:${email}" style="color:#dc2626;">${email}</a> to respond to this inquiry.
       </p>
       `
     );
@@ -48,7 +48,7 @@ export async function POST(req: NextRequest) {
         Dear <strong>${name}</strong>,<br/><br/>
         Thank you for reaching out to <strong>Nook Inn &amp; Suites</strong>. We have received your inquiry and our team will get back to you within <strong>24 hours</strong>.
       </p>
-      <div style="margin:24px 0;background:#f9f9f9;border-left:4px solid #e11d35;padding:16px 20px;">
+      <div style="margin:24px 0;background:#f9f9f9;border-left:4px solid #dc2626;padding:16px 20px;">
         <p style="color:#999;font-size:11px;text-transform:uppercase;letter-spacing:1px;margin:0 0 6px;">Your Message</p>
         <p style="color:#111;font-size:14px;margin:0;line-height:1.6;">${message.replace(/\n/g, "<br/>")}</p>
       </div>

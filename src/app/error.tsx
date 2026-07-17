@@ -17,7 +17,7 @@ export default function Error({ error, reset }: ErrorProps) {
 
   return (
     <div className="min-h-screen bg-primary-950 flex flex-col items-center justify-center p-6 text-center select-none font-sans">
-      <div className="p-4 bg-red-500/10 text-red-400 border border-red-500/20 mb-6">
+      <div className="p-4 bg-gold-500/10 text-gold-400 border border-gold-500/20 mb-6">
         <AlertTriangle className="h-10 w-10 animate-pulse" />
       </div>
 

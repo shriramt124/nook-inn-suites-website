@@ -46,7 +46,7 @@ export const RoomCard: React.FC<RoomCardProps> = ({ room, onCompareToggle, isCom
 
         {/* Top Floating Badge Info */}
         <div className="absolute top-4 left-4 z-10 flex flex-col gap-2">
-          {!room.availability && <Badge variant="secondary" className="bg-red-500 text-white border-none">Sold Out</Badge>}
+          {!room.availability && <Badge variant="secondary" className="bg-gold-500 text-white border-none">Sold Out</Badge>}
           {room.rating >= 4.9 && <Badge variant="gold">Signature Series</Badge>}
         </div>
 

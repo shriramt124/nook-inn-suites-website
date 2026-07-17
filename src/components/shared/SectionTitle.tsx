@@ -34,7 +34,7 @@ export const SectionTitle: React.FC<SectionTitleProps> = ({
         <span
           className={cn(
             "text-xs uppercase tracking-[0.3em] font-sans font-semibold",
-            dark ? "text-red-300" : "text-red-600"
+            dark ? "text-gold-300" : "text-gold-600"
           )}
         >
           {subtitle}
@@ -48,7 +48,7 @@ export const SectionTitle: React.FC<SectionTitleProps> = ({
       >
         {title}
       </h2>
-      <div className={cn("w-12 h-[1px] my-1", dark ? "bg-red-400/50" : "bg-red-600/40")} />
+      <div className={cn("w-12 h-[1px] my-1", dark ? "bg-gold-400/50" : "bg-gold-600/40")} />
       {description && (
         <p
           className={cn(

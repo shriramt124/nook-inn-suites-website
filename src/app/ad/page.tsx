@@ -62,17 +62,17 @@ export default function AdPage() {
               className="object-cover opacity-25 select-none"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#0f0f0f] via-[#0f0f0f]/70 to-transparent" />
-            <div className="absolute inset-0 bg-red-900/10" />
+            <div className="absolute inset-0 bg-gold-900/10" />
           </div>
 
           <div className="relative z-10 max-w-4xl mx-auto px-6 text-center space-y-6 flex flex-col items-center">
-            <span className="text-xs uppercase tracking-[0.45em] text-red-400 font-semibold">
+            <span className="text-xs uppercase tracking-[0.45em] text-gold-400 font-semibold">
               Bespoke Escape
             </span>
             <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-light tracking-wide text-white leading-tight">
               Reserve Your Dream Stay
             </h2>
-            <div className="w-12 h-[1px] bg-red-500/50" />
+            <div className="w-12 h-[1px] bg-gold-500/50" />
             <p className="text-stone-300 text-sm md:text-base font-sans font-light max-w-xl leading-relaxed">
               Book directly with Nook Inn &amp; Suites to receive priority room upgrades,
               complementary airport chauffeurs, and access to VIP pool cabanas.

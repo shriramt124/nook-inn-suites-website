@@ -88,10 +88,10 @@ export default function ContactPage() {
 
                 {/* Emergency Contact */}
                 <div className="flex items-start space-x-3.5 border-t border-stone-100 pt-4">
-                  <ShieldAlert className="h-5 w-5 text-red-500 shrink-0 mt-0.5" />
+                  <ShieldAlert className="h-5 w-5 text-gold-500 shrink-0 mt-0.5" />
                   <div>
-                    <span className="font-bold text-red-600 uppercase text-[10px] tracking-wider block">VIP Priority Line</span>
-                    <a href={`tel:${HOTEL_CONTACT_INFO.emergencyContact}`} className="hover:text-red-600 transition-colors">
+                    <span className="font-bold text-gold-600 uppercase text-[10px] tracking-wider block">VIP Priority Line</span>
+                    <a href={`tel:${HOTEL_CONTACT_INFO.emergencyContact}`} className="hover:text-gold-600 transition-colors">
                       {HOTEL_CONTACT_INFO.emergencyContact}
                     </a>
                   </div>

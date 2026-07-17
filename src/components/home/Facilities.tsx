@@ -43,15 +43,15 @@ export const Facilities: React.FC = () => {
               >
                 <Card
                   variant="default"
-                  className="h-full border border-stone-100 hover:border-red-300 bg-white hover:bg-white text-center rounded-none group transition-all duration-300 hover:shadow-md"
+                  className="h-full border border-stone-100 hover:border-gold-300 bg-white hover:bg-white text-center rounded-none group transition-all duration-300 hover:shadow-md"
                 >
                   <CardBody className="p-8 flex flex-col items-center">
                     {/* Icon Wrapper */}
-                    <div className="p-4 bg-red-50 text-red-600 group-hover:bg-red-600 group-hover:text-white transition-all duration-500 rounded-none mb-5">
+                    <div className="p-4 bg-gold-50 text-gold-600 group-hover:bg-gold-600 group-hover:text-white transition-all duration-500 rounded-none mb-5">
                       <IconComponent className="h-6 w-6 stroke-[1.5]" />
                     </div>
 
-                    <h3 className="font-serif text-lg md:text-xl text-[#111111] mb-2 font-medium group-hover:text-red-600 transition-colors duration-300">
+                    <h3 className="font-serif text-lg md:text-xl text-[#111111] mb-2 font-medium group-hover:text-gold-600 transition-colors duration-300">
                       {facility.name}
                     </h3>
                     <p className="text-stone-500 text-xs sm:text-sm font-sans font-normal leading-relaxed">

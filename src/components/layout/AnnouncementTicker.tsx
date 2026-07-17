@@ -4,7 +4,7 @@ import React from "react";
 import { Phone } from "lucide-react";
 
 const TICKER_ITEMS = [
-  { emoji: "🏨", text: "Luxury Stays — Comfort, Premium & Cottage Rooms available" },
+  { emoji: "🏨", text: "Luxury Stays — Comfort, Premium, Suite & Cottage Rooms available" },
   { emoji: "💍", text: "Banquet Hall · Up to 250 guests for Ring Ceremonies & Weddings" },
   { emoji: "💼", text: "Corporate Conference Room · Equipped for your next big meeting" },
   { emoji: "🎉", text: "Rooftop Party Venue · Celebrate under the open sky with friends" },
@@ -23,7 +23,7 @@ export const AnnouncementTicker: React.FC = () => {
     <div className="w-full bg-[#111111] border-b border-white/8 overflow-hidden z-50 relative select-none">
       <div className="flex items-center">
         {/* Static left label */}
-        <div className="shrink-0 flex items-center gap-2 px-4 py-2 bg-red-600 text-white text-[9px] uppercase tracking-[0.3em] font-semibold whitespace-nowrap z-10">
+        <div className="shrink-0 flex items-center gap-2 px-4 py-2 bg-white text-[#111111] text-[9px] uppercase tracking-[0.3em] font-semibold whitespace-nowrap z-10">
           <Phone className="h-3 w-3" />
           <span className="hidden sm:inline">Nook Inn</span>
         </div>
@@ -38,7 +38,7 @@ export const AnnouncementTicker: React.FC = () => {
               >
                 <span>{item.emoji}</span>
                 <span>{item.text}</span>
-                <span className="text-red-600 mx-2 text-xs">✦</span>
+                <span className="text-gold-600 mx-2 text-xs">✦</span>
               </span>
             ))}
           </div>

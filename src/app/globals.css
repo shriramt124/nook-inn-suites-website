@@ -16,17 +16,17 @@
   --color-primary-900: #080808;
   --color-primary-950: #050505;
 
-  /* Crimson Red scale (replaces antique gold) */
-  --color-gold-50: #fff1f3;
-  --color-gold-100: #ffe4e8;
-  --color-gold-200: #fecdd5;
-  --color-gold-300: #fda4b1;
-  --color-gold-400: #fb7185;
-  --color-gold-500: #e11d35; /* Brand Crimson Red */
-  --color-gold-600: #be1a2e;
-  --color-gold-700: #9b1526;
-  --color-gold-800: #7a101d;
-  --color-gold-900: #5c0c16;
+  /* Accent scale (mapped to red while preserving existing gold-* utility usage) */
+  --color-gold-50: #fef2f2;
+  --color-gold-100: #fee2e2;
+  --color-gold-200: #fecaca;
+  --color-gold-300: #fca5a5;
+  --color-gold-400: #f87171;
+  --color-gold-500: #ef4444; /* Primary red accent */
+  --color-gold-600: #dc2626; /* Hover */
+  --color-gold-700: #b91c1c;
+  --color-gold-800: #991b1b;
+  --color-gold-900: #7f1d1d;
 
   /* Neutral dark for text and elements */
   --color-dark-50: #fafafa;
@@ -42,6 +42,9 @@
 
   --font-serif: "Cormorant Garamond", Georgia, serif;
   --font-sans: "Plus Jakarta Sans", system-ui, sans-serif;
+
+  /* Extra-small breakpoint for ultra-small phones (≥ 400px activates) */
+  --breakpoint-xs: 400px;
 }
 
 :root {
@@ -66,7 +69,7 @@ body {
 }
 
 ::selection {
-  background: rgba(225, 29, 53, 0.18);
+  background: rgba(220, 38, 38, 0.18);
   color: #111111;
 }
 
@@ -75,7 +78,7 @@ body {
   opacity: 1;
 }
 
-/* Crimson red custom scrollbar */
+/* Accent custom scrollbar */
 ::-webkit-scrollbar {
   width: 6px;
 }
@@ -83,11 +86,11 @@ body {
   background: #f5f5f5;
 }
 ::-webkit-scrollbar-thumb {
-  background: #e11d35;
+  background: var(--color-gold-500);
   border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #be1a2e;
+  background: var(--color-gold-600);
 }
 
 /* Glassmorphism Styles */
@@ -122,11 +125,11 @@ body {
 }
 
 /* Luxury transitions and helpers */
-.hover-red-grow {
+.hover-gold-grow {
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
-.hover-red-grow:hover {
-  color: #e11d35;
+.hover-gold-grow:hover {
+  color: var(--color-gold-500);
   transform: translateY(-2px);
 }
 
@@ -147,5 +150,131 @@ body {
 
 .animate-ticker:hover {
   animation-play-state: paused;
+}
+
+/* ──────────────────────────────────────────────────────────────────────────
+   Ultra-Small Screen Optimization (≤ 380px)
+   Mobile-first downscaling for iPhone SE / small Androids.
+   Reduces padding, font sizes, gaps, and icon sizes globally without
+   touching individual component Tailwind classes.
+   ────────────────────────────────────────────────────────────────────────── */
+@media (max-width: 380px) {
+  /* Roots: prevent iOS zoom + give a smaller base */
+  html {
+    font-size: 15px;
+  }
+
+  /* Section vertical rhythm — tighten the heavy py-20/py-28 sections */
+  section[class*="py-20"],
+  section[class*="py-28"],
+  section[class*="py-24"] {
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+  }
+
+  /* Container horizontal gutters — px-6 (24px) → 14px */
+  .max-w-7xl {
+    padding-left: 0.875rem;
+    padding-right: 0.875rem;
+  }
+
+  /* Display headings scale down one notch */
+  h1 {
+    font-size: 1.75rem;
+    line-height: 1.15;
+  }
+  h2 {
+    font-size: 1.5rem;
+    line-height: 1.2;
+  }
+  h3 {
+    font-size: 1.15rem;
+  }
+  h1.font-serif,
+  h2.font-serif,
+  h3.font-serif {
+    letter-spacing: 0.01em;
+  }
+
+  /* Body & paragraph copy — readable but compact */
+  p {
+    font-size: 0.8125rem;
+    line-height: 1.55;
+  }
+
+  /* Grids: collapse large gaps so columns don't choke on 320–380px */
+  .grid {
+    gap: 0.75rem;
+  }
+  [class*="gap-8"],
+  [class*="gap-10"],
+  [class*="gap-12"] {
+    gap: 0.875rem;
+  }
+
+  /* Vertical stacks with big spacing */
+  [class*="space-y-8"],
+  [class*="space-y-10"],
+  [class*="space-y-12"] {
+    margin-top: 0;
+  }
+  [class*="space-y-8"] > * + *,
+  [class*="space-y-10"] > * + *,
+  [class*="space-y-12"] > * + * {
+    margin-top: 0.875rem;
+  }
+
+  /* Cards: less internal padding */
+  .p-6,
+  .p-8,
+  .md\:p-8,
+  .md\:p-10,
+  .md\:p-12 {
+    padding: 1rem;
+  }
+
+  /* Buttons: smaller tap target padding while staying usable */
+  button[class*="px-8"],
+  button[class*="py-4"] {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    font-size: 0.6875rem;
+  }
+
+  /* Lucide icons rendered inline — shrink slightly */
+  svg.lucide {
+    width: 1rem;
+    height: 1rem;
+  }
+
+  /* Announcement ticker — tighter strip */
+  .animate-ticker span {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+
+  /* Sticky booking summary / side cards — compact */
+  [class*="lg:sticky"] {
+    padding: 1rem;
+  }
+}
+
+/* Additional refinement for the tiniest screens (≤ 340px) */
+@media (max-width: 340px) {
+  html {
+    font-size: 14px;
+  }
+  .max-w-7xl {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+  h1 {
+    font-size: 1.5rem;
+  }
+  h2 {
+    font-size: 1.3rem;
+  }
 }
 

@@ -52,7 +52,7 @@ export const Footer: React.FC = () => {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
-                className="w-full pl-10 pr-4 py-3 bg-white/5 border border-white/10 text-stone-200 text-sm placeholder:text-stone-500 transition-colors focus:outline-none focus:border-red-500 rounded-none"
+                className="w-full pl-10 pr-4 py-3 bg-white/5 border border-white/10 text-stone-200 text-sm placeholder:text-stone-500 transition-colors focus:outline-none focus:border-gold-500 rounded-none"
               />
             </div>
             <Button type="submit" variant="secondary" size="sm" className="sm:w-auto h-full py-3.5 px-6">
@@ -66,7 +66,7 @@ export const Footer: React.FC = () => {
             </Button>
           </form>
           {subscribed && (
-            <p className="text-xs text-red-400 mt-2 animate-fade-in font-light">
+            <p className="text-xs text-gold-400 mt-2 animate-fade-in font-light">
               Thank you for subscribing to Nook Inn updates.
             </p>
           )}
@@ -82,36 +82,36 @@ export const Footer: React.FC = () => {
           </h4>
           <ul className="space-y-3.5 text-sm font-normal text-stone-400">
             <li>
-              <span className="text-red-400 font-normal uppercase tracking-wider text-[10px] block mb-0.5">
+              <span className="text-gold-400 font-normal uppercase tracking-wider text-[10px] block mb-0.5">
                 Address
               </span>
               {HOTEL_CONTACT_INFO.address}
             </li>
             <li className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <span className="text-red-400 font-normal uppercase tracking-wider text-[10px] block mb-0.5">
+                <span className="text-gold-400 font-normal uppercase tracking-wider text-[10px] block mb-0.5">
                   Direct Lines
                 </span>
                 <div className="flex flex-col space-y-1">
-                  <a href={`tel:${HOTEL_CONTACT_INFO.phone}`} className="hover:text-red-400 transition-colors block">
+                  <a href={`tel:${HOTEL_CONTACT_INFO.phone}`} className="hover:text-gold-400 transition-colors block">
                     {HOTEL_CONTACT_INFO.phone}
                   </a>
-                  <a href={`tel:${HOTEL_CONTACT_INFO.emergencyContact}`} className="hover:text-red-400 transition-colors block">
+                  <a href={`tel:${HOTEL_CONTACT_INFO.emergencyContact}`} className="hover:text-gold-400 transition-colors block">
                     {HOTEL_CONTACT_INFO.emergencyContact}
                   </a>
                 </div>
               </div>
               <div>
-                <span className="text-red-400 font-normal uppercase tracking-wider text-[10px] block mb-0.5">
+                <span className="text-gold-400 font-normal uppercase tracking-wider text-[10px] block mb-0.5">
                   General Inquiries
                 </span>
-                <a href={`mailto:${HOTEL_CONTACT_INFO.email}`} className="hover:text-red-400 transition-colors">
+                <a href={`mailto:${HOTEL_CONTACT_INFO.email}`} className="hover:text-gold-400 transition-colors">
                   {HOTEL_CONTACT_INFO.email}
                 </a>
               </div>
             </li>
             <li>
-              <span className="text-red-400 font-normal uppercase tracking-wider text-[10px] block mb-0.5">
+              <span className="text-gold-400 font-normal uppercase tracking-wider text-[10px] block mb-0.5">
                 Reception Timing
               </span>
               {HOTEL_CONTACT_INFO.receptionTiming}
@@ -126,14 +126,14 @@ export const Footer: React.FC = () => {
           </h4>
           <div className="flex flex-col space-y-3 text-sm font-normal text-stone-400">
             {NAVIGATION_ITEMS.map((item) => (
-              <Link key={item.name} href={item.href} className="hover:text-red-400 transition-colors w-fit">
+              <Link key={item.name} href={item.href} className="hover:text-gold-400 transition-colors w-fit">
                 {item.name}
               </Link>
             ))}
-            <Link href="/rooms" className="hover:text-red-400 transition-colors w-fit">
+            <Link href="/rooms" className="hover:text-gold-400 transition-colors w-fit">
               Luxury Suites
             </Link>
-            <Link href="/contact" className="hover:text-red-400 transition-colors w-fit">
+            <Link href="/contact" className="hover:text-gold-400 transition-colors w-fit">
               Frequently Asked Questions
             </Link>
           </div>
@@ -152,28 +152,28 @@ export const Footer: React.FC = () => {
           <div className="flex items-center space-x-4">
             <a
               href="#"
-              className="p-2.5 bg-white/5 border border-white/10 rounded-none text-stone-400 hover:text-red-400 hover:border-red-500 transition-all duration-300"
+              className="p-2.5 bg-white/5 border border-white/10 rounded-none text-stone-400 hover:text-gold-400 hover:border-gold-500 transition-all duration-300"
               aria-label="Instagram"
             >
               <Instagram className="h-4 w-4" />
             </a>
             <a
               href="#"
-              className="p-2.5 bg-white/5 border border-white/10 rounded-none text-stone-400 hover:text-red-400 hover:border-red-500 transition-all duration-300"
+              className="p-2.5 bg-white/5 border border-white/10 rounded-none text-stone-400 hover:text-gold-400 hover:border-gold-500 transition-all duration-300"
               aria-label="Facebook"
             >
               <Facebook className="h-4 w-4" />
             </a>
             <a
               href="#"
-              className="p-2.5 bg-white/5 border border-white/10 rounded-none text-stone-400 hover:text-red-400 hover:border-red-500 transition-all duration-300"
+              className="p-2.5 bg-white/5 border border-white/10 rounded-none text-stone-400 hover:text-gold-400 hover:border-gold-500 transition-all duration-300"
               aria-label="Twitter"
             >
               <Twitter className="h-4 w-4" />
             </a>
             <a
               href="#"
-              className="p-2.5 bg-white/5 border border-white/10 rounded-none text-stone-400 hover:text-red-400 hover:border-red-500 transition-all duration-300"
+              className="p-2.5 bg-white/5 border border-white/10 rounded-none text-stone-400 hover:text-gold-400 hover:border-gold-500 transition-all duration-300"
               aria-label="LinkedIn"
             >
               <Linkedin className="h-4 w-4" />

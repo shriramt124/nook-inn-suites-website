@@ -87,7 +87,7 @@ export const CallbackModal: React.FC<CallbackModalProps> = ({
             className="bg-white w-full max-w-md rounded-none shadow-2xl overflow-hidden relative"
           >
             {/* Red accent top bar */}
-            <div className="h-1 w-full bg-gradient-to-r from-red-600 via-red-500 to-red-700" />
+            <div className="h-1 w-full bg-gradient-to-r from-gold-600 via-gold-500 to-gold-700" />
 
             <div className="p-6 sm:p-8 overflow-y-auto max-h-[85vh]">
               {/* Close button */}
@@ -101,7 +101,7 @@ export const CallbackModal: React.FC<CallbackModalProps> = ({
 
               {!submitted ? (
                 <>
-                  <span className="text-[10px] uppercase tracking-[0.35em] text-red-500 font-semibold">
+                  <span className="text-[10px] uppercase tracking-[0.35em] text-gold-500 font-semibold">
                     Nook Inn &amp; Suites
                   </span>
                   <h2 className="font-serif text-2xl md:text-3xl text-primary-900 mt-1 mb-1">
@@ -115,7 +115,7 @@ export const CallbackModal: React.FC<CallbackModalProps> = ({
                     {/* Name */}
                     <div>
                       <label className="block text-[10px] uppercase tracking-widest text-stone-500 font-sans mb-1">
-                        Full Name <span className="text-red-500">*</span>
+                        Full Name <span className="text-gold-500">*</span>
                       </label>
                       <input
                         required
@@ -123,14 +123,14 @@ export const CallbackModal: React.FC<CallbackModalProps> = ({
                         placeholder="e.g. Rahul Sharma"
                         value={form.name}
                         onChange={(e) => setForm((f) => ({ ...f, name: e.target.value }))}
-                        className="w-full border border-stone-200 px-4 py-2.5 text-sm font-sans text-primary-900 outline-none focus:border-red-500 transition-colors placeholder:text-stone-400 rounded-none"
+                        className="w-full border border-stone-200 px-4 py-2.5 text-sm font-sans text-primary-900 outline-none focus:border-gold-500 transition-colors placeholder:text-stone-400 rounded-none"
                       />
                     </div>
 
                     {/* Email */}
                     <div>
                       <label className="block text-[10px] uppercase tracking-widest text-stone-500 font-sans mb-1">
-                        Email Address <span className="text-red-500">*</span>
+                        Email Address <span className="text-gold-500">*</span>
                       </label>
                       <input
                         required
@@ -138,14 +138,14 @@ export const CallbackModal: React.FC<CallbackModalProps> = ({
                         placeholder="you@example.com"
                         value={form.email}
                         onChange={(e) => setForm((f) => ({ ...f, email: e.target.value }))}
-                        className="w-full border border-stone-200 px-4 py-2.5 text-sm font-sans text-primary-900 outline-none focus:border-red-500 transition-colors placeholder:text-stone-400 rounded-none"
+                        className="w-full border border-stone-200 px-4 py-2.5 text-sm font-sans text-primary-900 outline-none focus:border-gold-500 transition-colors placeholder:text-stone-400 rounded-none"
                       />
                     </div>
 
                     {/* Phone */}
                     <div>
                       <label className="block text-[10px] uppercase tracking-widest text-stone-500 font-sans mb-1">
-                        Phone Number <span className="text-red-500">*</span>
+                        Phone Number <span className="text-gold-500">*</span>
                       </label>
                       <input
                         required
@@ -153,7 +153,7 @@ export const CallbackModal: React.FC<CallbackModalProps> = ({
                         placeholder="+91 98765 43210"
                         value={form.phone}
                         onChange={(e) => setForm((f) => ({ ...f, phone: e.target.value }))}
-                        className="w-full border border-stone-200 px-4 py-2.5 text-sm font-sans text-primary-900 outline-none focus:border-red-500 transition-colors placeholder:text-stone-400 rounded-none"
+                        className="w-full border border-stone-200 px-4 py-2.5 text-sm font-sans text-primary-900 outline-none focus:border-gold-500 transition-colors placeholder:text-stone-400 rounded-none"
                       />
                     </div>
 
@@ -168,20 +168,20 @@ export const CallbackModal: React.FC<CallbackModalProps> = ({
                         placeholder="e.g. New Delhi"
                         value={form.city}
                         onChange={(e) => setForm((f) => ({ ...f, city: e.target.value }))}
-                        className="w-full border border-stone-200 px-4 py-2.5 text-sm font-sans text-primary-900 outline-none focus:border-red-500 transition-colors placeholder:text-stone-400 rounded-none"
+                        className="w-full border border-stone-200 px-4 py-2.5 text-sm font-sans text-primary-900 outline-none focus:border-gold-500 transition-colors placeholder:text-stone-400 rounded-none"
                       />
                     </div>
 
                     {/* Intent dropdown */}
                     <div>
                       <label className="block text-[10px] uppercase tracking-widest text-stone-500 font-sans mb-1">
-                        I&apos;m Interested In <span className="text-red-500">*</span>
+                        I&apos;m Interested In <span className="text-gold-500">*</span>
                       </label>
                       <select
                         required
                         value={form.intent}
                         onChange={(e) => setForm((f) => ({ ...f, intent: e.target.value }))}
-                        className="w-full border border-stone-200 px-4 py-2.5 text-sm font-sans text-primary-900 outline-none focus:border-red-500 transition-colors bg-white rounded-none cursor-pointer"
+                        className="w-full border border-stone-200 px-4 py-2.5 text-sm font-sans text-primary-900 outline-none focus:border-gold-500 transition-colors bg-white rounded-none cursor-pointer"
                       >
                         {INTENT_OPTIONS.map((o) => (
                           <option key={o} value={o}>
@@ -194,7 +194,7 @@ export const CallbackModal: React.FC<CallbackModalProps> = ({
                     <button
                       type="submit"
                       disabled={loading}
-                      className="w-full mt-2 bg-red-600 hover:bg-red-700 active:bg-red-800 text-white font-semibold text-sm uppercase tracking-widest py-3.5 transition-colors duration-200 disabled:opacity-60 cursor-pointer"
+                      className="w-full mt-2 bg-gold-500 hover:bg-gold-600 active:bg-gold-700 text-white font-semibold text-sm uppercase tracking-widest py-3.5 transition-colors duration-200 disabled:opacity-60 cursor-pointer"
                     >
                       {loading ? "Sending…" : "Request Callback →"}
                     </button>
@@ -214,7 +214,7 @@ export const CallbackModal: React.FC<CallbackModalProps> = ({
                   </p>
                   <button
                     onClick={onClose}
-                    className="mt-8 text-xs uppercase tracking-widest text-red-500 hover:text-red-700 font-semibold transition-colors cursor-pointer"
+                    className="mt-8 text-xs uppercase tracking-widest text-gold-500 hover:text-gold-700 font-semibold transition-colors cursor-pointer"
                   >
                     Close
                   </button>

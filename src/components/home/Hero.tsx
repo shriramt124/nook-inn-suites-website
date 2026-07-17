@@ -198,7 +198,7 @@ const CallbackModal: React.FC<CallbackModalProps> = ({
             className="bg-white w-full max-w-md rounded-none shadow-2xl overflow-hidden relative"
           >
             {/* Red accent top bar */}
-            <div className="h-1 w-full bg-gradient-to-r from-red-600 via-red-500 to-red-700" />
+            <div className="h-1 w-full bg-gradient-to-r from-gold-600 via-gold-500 to-gold-700" />
 
             <div className="p-8">
               {/* Close button */}
@@ -212,7 +212,7 @@ const CallbackModal: React.FC<CallbackModalProps> = ({
 
               {!submitted ? (
                 <>
-                  <span className="text-[10px] uppercase tracking-[0.35em] text-red-500 font-semibold">
+                  <span className="text-[10px] uppercase tracking-[0.35em] text-gold-500 font-semibold">
                     Nook Inn & Suites
                   </span>
                   <h2 className="font-serif text-2xl md:text-3xl text-primary-900 mt-1 mb-1">
@@ -227,7 +227,7 @@ const CallbackModal: React.FC<CallbackModalProps> = ({
                     {/* Name */}
                     <div>
                       <label className="block text-[10px] uppercase tracking-widest text-stone-500 font-sans mb-1">
-                        Full Name <span className="text-red-500">*</span>
+                        Full Name <span className="text-gold-500">*</span>
                       </label>
                       <input
                         required
@@ -237,14 +237,14 @@ const CallbackModal: React.FC<CallbackModalProps> = ({
                         onChange={(e) =>
                           setForm((f) => ({ ...f, name: e.target.value }))
                         }
-                        className="w-full border border-stone-200 px-4 py-2.5 text-sm font-sans text-primary-900 outline-none focus:border-red-500 transition-colors placeholder:text-stone-400 rounded-none"
+                        className="w-full border border-stone-200 px-4 py-2.5 text-sm font-sans text-primary-900 outline-none focus:border-gold-500 transition-colors placeholder:text-stone-400 rounded-none"
                       />
                     </div>
 
                     {/* Email */}
                     <div>
                       <label className="block text-[10px] uppercase tracking-widest text-stone-500 font-sans mb-1">
-                        Email Address <span className="text-red-500">*</span>
+                        Email Address <span className="text-gold-500">*</span>
                       </label>
                       <input
                         required
@@ -254,14 +254,14 @@ const CallbackModal: React.FC<CallbackModalProps> = ({
                         onChange={(e) =>
                           setForm((f) => ({ ...f, email: e.target.value }))
                         }
-                        className="w-full border border-stone-200 px-4 py-2.5 text-sm font-sans text-primary-900 outline-none focus:border-red-500 transition-colors placeholder:text-stone-400 rounded-none"
+                        className="w-full border border-stone-200 px-4 py-2.5 text-sm font-sans text-primary-900 outline-none focus:border-gold-500 transition-colors placeholder:text-stone-400 rounded-none"
                       />
                     </div>
 
                     {/* Phone */}
                     <div>
                       <label className="block text-[10px] uppercase tracking-widest text-stone-500 font-sans mb-1">
-                        Phone Number <span className="text-red-500">*</span>
+                        Phone Number <span className="text-gold-500">*</span>
                       </label>
                       <input
                         required
@@ -271,7 +271,7 @@ const CallbackModal: React.FC<CallbackModalProps> = ({
                         onChange={(e) =>
                           setForm((f) => ({ ...f, phone: e.target.value }))
                         }
-                        className="w-full border border-stone-200 px-4 py-2.5 text-sm font-sans text-primary-900 outline-none focus:border-red-500 transition-colors placeholder:text-stone-400 rounded-none"
+                        className="w-full border border-stone-200 px-4 py-2.5 text-sm font-sans text-primary-900 outline-none focus:border-gold-500 transition-colors placeholder:text-stone-400 rounded-none"
                       />
                     </div>
 
@@ -290,14 +290,14 @@ const CallbackModal: React.FC<CallbackModalProps> = ({
                         onChange={(e) =>
                           setForm((f) => ({ ...f, city: e.target.value }))
                         }
-                        className="w-full border border-stone-200 px-4 py-2.5 text-sm font-sans text-primary-900 outline-none focus:border-red-500 transition-colors placeholder:text-stone-400 rounded-none"
+                        className="w-full border border-stone-200 px-4 py-2.5 text-sm font-sans text-primary-900 outline-none focus:border-gold-500 transition-colors placeholder:text-stone-400 rounded-none"
                       />
                     </div>
 
                     {/* Intent dropdown */}
                     <div>
                       <label className="block text-[10px] uppercase tracking-widest text-stone-500 font-sans mb-1">
-                        I&apos;m Interested In <span className="text-red-500">*</span>
+                        I&apos;m Interested In <span className="text-gold-500">*</span>
                       </label>
                       <select
                         required
@@ -305,7 +305,7 @@ const CallbackModal: React.FC<CallbackModalProps> = ({
                         onChange={(e) =>
                           setForm((f) => ({ ...f, intent: e.target.value }))
                         }
-                        className="w-full border border-stone-200 px-4 py-2.5 text-sm font-sans text-primary-900 outline-none focus:border-red-500 transition-colors bg-white rounded-none cursor-pointer"
+                        className="w-full border border-stone-200 px-4 py-2.5 text-sm font-sans text-primary-900 outline-none focus:border-gold-500 transition-colors bg-white rounded-none cursor-pointer"
                       >
                         {INTENT_OPTIONS.map((o) => (
                           <option key={o} value={o}>
@@ -318,7 +318,7 @@ const CallbackModal: React.FC<CallbackModalProps> = ({
                     <button
                       type="submit"
                       disabled={loading}
-                      className="w-full mt-2 bg-red-600 hover:bg-red-700 active:bg-red-800 text-white font-semibold text-sm uppercase tracking-widest py-3.5 transition-colors duration-200 disabled:opacity-60 cursor-pointer"
+                      className="w-full mt-2 bg-white hover:bg-stone-100 active:bg-stone-200 text-[#111111] font-semibold text-sm uppercase tracking-widest py-3.5 transition-colors duration-200 disabled:opacity-60 cursor-pointer"
                     >
                       {loading ? "Sending…" : "Request Callback →"}
                     </button>
@@ -342,7 +342,7 @@ const CallbackModal: React.FC<CallbackModalProps> = ({
                   </p>
                   <button
                     onClick={onClose}
-                    className="mt-8 text-xs uppercase tracking-widest text-red-500 hover:text-red-700 font-semibold transition-colors cursor-pointer"
+                    className="mt-8 text-xs uppercase tracking-widest text-gold-500 hover:text-gold-700 font-semibold transition-colors cursor-pointer"
                   >
                     Close
                   </button>
@@ -417,7 +417,7 @@ export const Hero: React.FC = () => {
 
   return (
     <>
-      <section className="relative w-full h-screen overflow-hidden flex items-center justify-center bg-[#0f0f0f]">
+      <section className="relative w-full min-h-[100svh] h-screen overflow-hidden flex items-center justify-center bg-[#0f0f0f]">
         {/* ── Background Image Slideshow ── */}
         <AnimatePresence custom={direction} mode="sync">
           <motion.div
@@ -453,49 +453,49 @@ export const Hero: React.FC = () => {
             animate="center"
             exit="exit"
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-            className="relative z-20 max-w-5xl mx-auto px-6 md:px-12 text-center flex flex-col items-center space-y-5 mt-28"
+            className="relative z-20 max-w-5xl mx-auto px-4 sm:px-6 md:px-12 text-center flex flex-col items-center space-y-3 sm:space-y-5 mt-20 sm:mt-28"
           >
             {/* Badge */}
-            <span className="inline-block px-4 py-1.5 bg-red-600/90 text-white text-[10px] uppercase tracking-[0.35em] font-semibold backdrop-blur-sm">
+            <span className="inline-block px-3 sm:px-4 py-1 sm:py-1.5 bg-gold-600/90 text-white text-[9px] sm:text-[10px] uppercase tracking-[0.2em] sm:tracking-[0.35em] font-semibold backdrop-blur-sm">
               {slide.badge}
             </span>
 
             {/* Heading */}
-            <h1 className="font-serif text-4xl sm:text-5xl md:text-7xl font-extralight tracking-wide text-white leading-tight">
+            <h1 className="font-serif text-3xl xs:text-4xl sm:text-5xl md:text-7xl font-extralight tracking-wide text-white leading-tight">
               {slide.heading}
               <br className="hidden sm:inline" />
-              <span className="italic font-normal text-red-400">
+              <span className="italic font-normal text-gold-400">
                 {slide.headingAccent}
               </span>
             </h1>
 
             {/* Divider */}
-            <div className="w-16 h-[1px] bg-red-500/60" />
+            <div className="w-12 sm:w-16 h-[1px] bg-gold-500/60" />
 
             {/* Subtext */}
-            <p className="text-sm sm:text-base md:text-lg text-stone-200 font-normal font-sans max-w-2xl leading-relaxed">
+            <p className="text-xs sm:text-base md:text-lg text-stone-200 font-normal font-sans max-w-2xl leading-relaxed px-2 sm:px-0">
               {slide.subtext}
             </p>
 
             {/* Perks row */}
-            <div className="flex flex-wrap items-center justify-center gap-3 pt-1">
+            <div className="grid grid-cols-2 sm:flex sm:flex-wrap items-center justify-center gap-2 sm:gap-3 pt-1 w-full sm:w-auto">
               {slide.perks.map(({ icon: Icon, label }) => (
                 <div
                   key={label}
-                  className="flex items-center gap-1.5 bg-white/10 backdrop-blur-sm border border-white/15 px-3 py-1.5 text-white text-[10px] uppercase tracking-widest font-sans"
+                  className="flex items-center justify-center gap-1.5 bg-white/10 backdrop-blur-sm border border-white/15 px-2 sm:px-3 py-1 sm:py-1.5 text-white text-[9px] sm:text-[10px] uppercase tracking-widest font-sans"
                 >
-                  <Icon className="h-3.5 w-3.5 text-red-400 shrink-0" />
+                  <Icon className="h-3 w-3 sm:h-3.5 sm:w-3.5 text-gold-400 shrink-0" />
                   {label}
                 </div>
               ))}
             </div>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 pt-4 w-full sm:w-auto">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-3 sm:pt-4 w-full sm:w-auto">
               {/* Callback button — always shown */}
               <button
                 onClick={() => openModal(slide.intent)}
-                className="flex items-center justify-center gap-2 bg-red-600 hover:bg-red-700 text-white font-semibold uppercase tracking-widest text-xs px-8 py-4 transition-colors duration-200 w-full sm:w-auto cursor-pointer"
+                className="flex items-center justify-center gap-2 bg-white hover:bg-stone-100 text-[#111111] font-semibold uppercase tracking-widest text-[10px] sm:text-xs px-6 sm:px-8 py-3 sm:py-4 transition-colors duration-200 w-full sm:w-auto cursor-pointer"
               >
                 <Phone className="h-4 w-4" />
                 Request a Callback
@@ -504,14 +504,14 @@ export const Hero: React.FC = () => {
               {/* Slide-specific secondary button */}
               {slide.cta ? (
                 <Link href={slide.cta} className="w-full sm:w-auto">
-                  <button className="flex items-center justify-center gap-2 border border-white text-white hover:bg-white hover:text-[#111111] font-semibold uppercase tracking-widest text-xs px-8 py-4 transition-all duration-200 w-full cursor-pointer">
+                  <button className="flex items-center justify-center gap-2 border border-white bg-transparent text-white hover:bg-white hover:text-[#111111] font-semibold uppercase tracking-widest text-[10px] sm:text-xs px-6 sm:px-8 py-3 sm:py-4 transition-all duration-200 w-full cursor-pointer">
                     {slide.ctaLabel}
                     <ArrowRight className="h-4 w-4" />
                   </button>
                 </Link>
               ) : (
                 <Link href="/rooms" className="w-full sm:w-auto">
-                  <button className="flex items-center justify-center gap-2 border border-white text-white hover:bg-white hover:text-[#111111] font-semibold uppercase tracking-widest text-xs px-8 py-4 transition-all duration-200 w-full cursor-pointer">
+                  <button className="flex items-center justify-center gap-2 border border-white bg-transparent text-white hover:bg-white hover:text-[#111111] font-semibold uppercase tracking-widest text-[10px] sm:text-xs px-6 sm:px-8 py-3 sm:py-4 transition-all duration-200 w-full cursor-pointer">
                     Explore Rooms
                     <ArrowRight className="h-4 w-4" />
                   </button>
@@ -525,20 +525,20 @@ export const Hero: React.FC = () => {
         <button
           onClick={prevSlide}
           aria-label="Previous slide"
-          className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-30 p-2.5 bg-white/10 hover:bg-white/25 backdrop-blur-sm text-white border border-white/20 transition-all duration-200 cursor-pointer"
+          className="absolute left-2 sm:left-4 md:left-8 top-1/2 -translate-y-1/2 z-30 p-1.5 sm:p-2.5 bg-white/10 hover:bg-white/25 backdrop-blur-sm text-white border border-white/20 transition-all duration-200 cursor-pointer"
         >
-          <ChevronLeft className="h-5 w-5" />
+          <ChevronLeft className="h-4 w-4 sm:h-5 sm:w-5" />
         </button>
         <button
           onClick={nextSlide}
           aria-label="Next slide"
-          className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-30 p-2.5 bg-white/10 hover:bg-white/25 backdrop-blur-sm text-white border border-white/20 transition-all duration-200 cursor-pointer"
+          className="absolute right-2 sm:right-4 md:right-8 top-1/2 -translate-y-1/2 z-30 p-1.5 sm:p-2.5 bg-white/10 hover:bg-white/25 backdrop-blur-sm text-white border border-white/20 transition-all duration-200 cursor-pointer"
         >
-          <ChevronRight className="h-5 w-5" />
+          <ChevronRight className="h-4 w-4 sm:h-5 sm:w-5" />
         </button>
 
         {/* ── Dot indicators ── */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-30 flex items-center gap-2">
+        <div className="absolute bottom-5 sm:bottom-8 left-1/2 -translate-x-1/2 z-30 flex items-center gap-1.5 sm:gap-2">
           {SLIDES.map((s, idx) => (
             <button
               key={s.id}
@@ -546,15 +546,15 @@ export const Hero: React.FC = () => {
               onClick={() => goToSlide(idx, idx > currentSlide ? 1 : -1)}
               className={`h-1.5 rounded-full transition-all duration-400 cursor-pointer ${
                 idx === currentSlide
-                  ? "w-8 bg-red-500"
-                  : "w-2 bg-white/40 hover:bg-white/70"
+                  ? "w-6 sm:w-8 bg-gold-500"
+                  : "w-1.5 sm:w-2 bg-white/40 hover:bg-white/70"
               }`}
             />
           ))}
         </div>
 
         {/* ── Slide counter ── */}
-        <div className="absolute bottom-8 right-6 md:right-10 z-30 text-[10px] uppercase tracking-widest text-white/50 font-sans select-none">
+        <div className="absolute bottom-5 sm:bottom-8 right-4 sm:right-6 md:right-10 z-30 text-[9px] sm:text-[10px] uppercase tracking-widest text-white/50 font-sans select-none">
           {String(currentSlide + 1).padStart(2, "0")} /{" "}
           {String(SLIDES.length).padStart(2, "0")}
         </div>

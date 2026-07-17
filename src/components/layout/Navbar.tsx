@@ -45,19 +45,19 @@ export const Navbar: React.FC = () => {
         animate="visible"
         variants={navVariants}
         className={`fixed top-[30px] left-0 right-0 z-40 transition-all duration-300 w-full ${scrolled || pathname !== "/"
-          ? "bg-[#111111]/97 backdrop-blur-md border-b border-white/10 shadow-md py-3"
-          : "bg-gradient-to-b from-black/70 to-transparent py-5"
+          ? "bg-[#111111]/97 backdrop-blur-md border-b border-white/10 shadow-md py-2 sm:py-3"
+          : "bg-gradient-to-b from-black/70 to-transparent py-3 sm:py-5"
           }`}
       >
         <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
           {/* Logo Brand */}
           <Link href="/" className="flex items-center text-white group" onClick={closeMenu}>
             <Image
-              src="/logo2.png"
+              src="/logo.png"
               alt="Nook Inn Logo"
               width={80}
               height={80}
-              className="w-36 md:w-36 h-auto object-contain group-hover:scale-105 transition-transform duration-300"
+              className="w-28 sm:w-36 h-auto object-contain group-hover:scale-105 transition-transform duration-300"
             />
           </Link>
 
@@ -71,7 +71,7 @@ export const Navbar: React.FC = () => {
                   href={item.href}
                   aria-current={isActive ? "page" : undefined}
                   className={`text-xs uppercase tracking-widest transition-all duration-300 hover:text-white px-3 py-2 rounded-full ${isActive
-                    ? "text-white bg-red-600 font-semibold shadow-[0_0_0_1px_rgba(225,29,53,0.4)]"
+                    ? "text-[#111111] bg-white font-semibold shadow-[0_0_0_1px_rgba(255,255,255,0.55)]"
                     : "text-stone-200 hover:bg-white/10"
                     }`}
                 >
@@ -84,7 +84,11 @@ export const Navbar: React.FC = () => {
           {/* Desktop Right Reservation Call to Action */}
           <div className="hidden lg:block">
             <Link href="/bookings">
-              <Button variant="secondary" size="sm">
+              <Button
+                variant="secondary"
+                size="sm"
+                className="bg-white text-[#111111] border-white hover:bg-stone-100 hover:text-[#111111] hover:border-stone-100"
+              >
                 Reserve a Room
               </Button>
             </Link>
@@ -93,7 +97,7 @@ export const Navbar: React.FC = () => {
           {/* Mobile Hamburger Menu Toggle Trigger */}
           <button
             onClick={toggleMenu}
-            className="lg:hidden text-white hover:text-red-400 transition-colors focus:outline-none cursor-pointer"
+            className="lg:hidden text-white hover:text-gold-400 transition-colors focus:outline-none cursor-pointer"
             aria-label="Toggle navigation menu"
           >
             {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -152,7 +156,7 @@ export const Navbar: React.FC = () => {
                         onClick={closeMenu}
                         aria-current={isActive ? "page" : undefined}
                         className={`text-sm uppercase tracking-widest font-sans font-normal transition-all duration-300 px-3 py-2 rounded-md ${isActive
-                          ? "text-white bg-red-600 font-semibold"
+                          ? "text-[#111111] bg-white font-semibold"
                           : "text-stone-200 hover:text-white hover:bg-white/5"
                           }`}
                       >
@@ -165,7 +169,11 @@ export const Navbar: React.FC = () => {
 
               <div className="space-y-4">
                 <Link href="/bookings" onClick={closeMenu} className="block w-full">
-                  <Button variant="secondary" size="md" className="w-full">
+                  <Button
+                    variant="secondary"
+                    size="md"
+                    className="w-full bg-white text-[#111111] border-white hover:bg-stone-100 hover:text-[#111111] hover:border-stone-100"
+                  >
                     Book Your Stay
                   </Button>
                 </Link>

@@ -123,7 +123,7 @@ export const ContactForm: React.FC = () => {
             className="w-full px-4 py-3 bg-white border border-stone-200 text-stone-800 text-sm font-sans placeholder:text-stone-400 transition-all duration-300 rounded-none focus:outline-none focus:border-gold-500 focus:ring-1 focus:ring-gold-500/30"
             {...register("message")}
           />
-          {errors.message && <span className="text-xs text-red-500 mt-0.5 font-medium">{errors.message.message}</span>}
+          {errors.message && <span className="text-xs text-gold-500 mt-0.5 font-medium">{errors.message.message}</span>}
         </div>
 
         {/* Submit */}

@@ -24,7 +24,7 @@ export const Toast: React.FC<ToastProps> = ({ isVisible, message, type = "succes
           <div className="flex items-start w-full">
             <div className="shrink-0">
               {type === "success" && <CheckCircle className="h-5 w-5 text-green-500" />}
-              {type === "error" && <AlertCircle className="h-5 w-5 text-red-500" />}
+              {type === "error" && <AlertCircle className="h-5 w-5 text-gold-500" />}
               {type === "info" && <Info className="h-5 w-5 text-gold-500" />}
             </div>
             <div className="ml-3 w-0 flex-1 pt-0.5">

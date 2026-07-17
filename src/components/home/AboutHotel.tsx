@@ -40,8 +40,8 @@ export const AboutHotel: React.FC = () => {
           </div>
 
           {/* Crimson red frame accent detail */}
-          <div className="absolute -top-4 -left-4 w-24 h-24 border-t-2 border-l-2 border-red-500/50 -z-10" />
-          <div className="absolute -bottom-4 -right-4 w-16 h-16 border-b-2 border-r-2 border-red-500/30 -z-10" />
+          <div className="absolute -top-4 -left-4 w-24 h-24 border-t-2 border-l-2 border-gold-500/50 -z-10" />
+          <div className="absolute -bottom-4 -right-4 w-16 h-16 border-b-2 border-r-2 border-gold-500/30 -z-10" />
         </motion.div>
 
         {/* Right Side: Text details and stats */}

@@ -52,10 +52,10 @@ export async function POST(req: NextRequest) {
       <table width="100%" cellpadding="0" cellspacing="0">
         <tr><td style="color:#444;font-size:13px;padding:4px 0;">Rate / Night</td><td align="right" style="color:#111;font-size:13px;">₹${pricing.ratePerNight?.toLocaleString("en-IN")} (${adults} adult${adults > 1 ? "s" : ""}${children > 0 ? `, ${children} child${children > 1 ? "ren" : ""}` : ""})</td></tr>
         <tr><td style="color:#444;font-size:13px;padding:4px 0;">Subtotal (${pricing.nights} night${pricing.nights !== 1 ? "s" : ""} × ${numberOfRooms} room${Number(numberOfRooms) > 1 ? "s" : ""})</td><td align="right" style="color:#111;font-size:13px;">₹${pricing.baseTotal?.toLocaleString("en-IN")}</td></tr>
-        ${pricing.discount > 0 ? `<tr><td style="color:#e11d35;font-size:13px;padding:4px 0;">Discount</td><td align="right" style="color:#e11d35;font-size:13px;">-₹${pricing.discount?.toLocaleString("en-IN")}</td></tr>` : ""}
+        ${pricing.discount > 0 ? `<tr><td style="color:#dc2626;font-size:13px;padding:4px 0;">Discount</td><td align="right" style="color:#dc2626;font-size:13px;">-₹${pricing.discount?.toLocaleString("en-IN")}</td></tr>` : ""}
         <tr><td style="color:#444;font-size:13px;padding:4px 0;">Taxes (12%)</td><td align="right" style="color:#111;font-size:13px;">₹${pricing.taxes?.toLocaleString("en-IN")}</td></tr>
         <tr><td colspan="2"><hr style="border:none;border-top:1px solid #e5e5e5;margin:8px 0;" /></td></tr>
-        <tr><td style="color:#111;font-size:15px;font-weight:700;padding:4px 0;">Grand Total</td><td align="right" style="color:#e11d35;font-size:16px;font-weight:700;">₹${pricing.grandTotal?.toLocaleString("en-IN")}</td></tr>
+        <tr><td style="color:#111;font-size:15px;font-weight:700;padding:4px 0;">Grand Total</td><td align="right" style="color:#dc2626;font-size:16px;font-weight:700;">₹${pricing.grandTotal?.toLocaleString("en-IN")}</td></tr>
       </table>
     </div>`;
 
@@ -68,9 +68,9 @@ export async function POST(req: NextRequest) {
       ${hotelFields}
       ${pricingBlock}
       <div style="margin-top:20px;padding:14px 18px;background:#fff4f5;border:1px solid #fecdd5;">
-        <p style="color:#e11d35;font-size:13px;margin:0;font-weight:600;">
+        <p style="color:#dc2626;font-size:13px;margin:0;font-weight:600;">
           Please confirm this reservation and contact the guest at 
-          <a href="tel:${phone}" style="color:#e11d35;">${phone}</a> if needed.
+          <a href="tel:${phone}" style="color:#dc2626;">${phone}</a> if needed.
         </p>
       </div>
       `
@@ -110,7 +110,7 @@ export async function POST(req: NextRequest) {
           If you need to make any changes, reply to this email or call us directly.
         </p>
       </div>
-      ${specialRequests ? `<div style="margin-top:16px;background:#f9f9f9;border-left:4px solid #e11d35;padding:12px 16px;"><p style="color:#999;font-size:11px;margin:0 0 4px;text-transform:uppercase;letter-spacing:1px;">Your Special Requests</p><p style="color:#111;font-size:14px;margin:0;">${specialRequests}</p></div>` : ""}
+      ${specialRequests ? `<div style="margin-top:16px;background:#f9f9f9;border-left:4px solid #dc2626;padding:12px 16px;"><p style="color:#999;font-size:11px;margin:0 0 4px;text-transform:uppercase;letter-spacing:1px;">Your Special Requests</p><p style="color:#111;font-size:14px;margin:0;">${specialRequests}</p></div>` : ""}
       <p style="color:#666;font-size:12px;margin-top:24px;">
         We look forward to welcoming you!<br/>
         <strong>Team Nook Inn &amp; Suites</strong>

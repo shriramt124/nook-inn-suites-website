@@ -17,15 +17,15 @@ export const StatsCard: React.FC<StatsCardProps> = ({ value, label, description,
       )}
     >
       {/* Decorative corner accents */}
-      <span className="absolute top-0 left-0 w-3 h-[2px] bg-red-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-      <span className="absolute top-0 left-0 w-[2px] h-3 bg-red-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-      <span className="absolute bottom-0 right-0 w-3 h-[2px] bg-red-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-      <span className="absolute bottom-0 right-0 w-[2px] h-3 bg-red-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+      <span className="absolute top-0 left-0 w-3 h-[2px] bg-gold-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+      <span className="absolute top-0 left-0 w-[2px] h-3 bg-gold-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+      <span className="absolute bottom-0 right-0 w-3 h-[2px] bg-gold-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+      <span className="absolute bottom-0 right-0 w-[2px] h-3 bg-gold-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
-      <span className="font-serif text-4xl sm:text-5xl font-light tracking-tight text-[#111111] mb-2 group-hover:text-red-600 transition-colors duration-300">
+      <span className="font-serif text-4xl sm:text-5xl font-light tracking-tight text-[#111111] mb-2 group-hover:text-gold-600 transition-colors duration-300">
         {value}
       </span>
-      <span className="text-xs uppercase tracking-widest text-red-600 font-semibold mb-1">
+      <span className="text-xs uppercase tracking-widest text-gold-600 font-semibold mb-1">
         {label}
       </span>
       {description && (

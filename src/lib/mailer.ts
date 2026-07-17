@@ -44,7 +44,7 @@ export function emailWrapper(title: string, body: string): string {
           <!-- Header -->
           <tr>
             <td style="background:#111111;padding:28px 40px;text-align:center;">
-              <div style="display:inline-block;background:#e11d35;color:#fff;font-size:10px;letter-spacing:3px;text-transform:uppercase;padding:6px 16px;margin-bottom:12px;">Nook Inn &amp; Suites</div>
+              <div style="display:inline-block;background:#dc2626;color:#fff;font-size:10px;letter-spacing:3px;text-transform:uppercase;padding:6px 16px;margin-bottom:12px;">Nook Inn &amp; Suites</div>
               <h1 style="color:#ffffff;font-size:22px;font-weight:300;margin:0;letter-spacing:2px;">${title}</h1>
             </td>
           </tr>

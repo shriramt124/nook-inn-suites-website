@@ -29,7 +29,7 @@ export const Select = React.forwardRef<HTMLSelectElement, SelectProps>(
             className={cn(
               "w-full px-4 py-3 bg-white border border-stone-200 text-stone-800 text-sm font-sans transition-all duration-300 rounded-none focus:outline-none focus:border-gold-500 focus:ring-1 focus:ring-gold-500/30 appearance-none cursor-pointer",
               icon && "pl-11",
-              error && "border-red-500 focus:border-red-500 focus:ring-red-500/30",
+              error && "border-gold-500 focus:border-gold-500 focus:ring-gold-500/30",
               className
             )}
             {...props}
@@ -52,7 +52,7 @@ export const Select = React.forwardRef<HTMLSelectElement, SelectProps>(
             </svg>
           </div>
         </div>
-        {error && <span className="text-xs text-red-500 mt-0.5">{error}</span>}
+        {error && <span className="text-xs text-gold-500 mt-0.5">{error}</span>}
       </div>
     );
   }

@@ -37,15 +37,15 @@ export const WhyChooseUs: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.5, delay: index * 0.08, ease: "easeOut" }}
-                className="flex items-start p-6 bg-[#fafafa] border border-stone-100 hover:border-red-300 hover:shadow-md transition-all duration-300 group"
+                className="flex items-start p-6 bg-[#fafafa] border border-stone-100 hover:border-gold-300 hover:shadow-md transition-all duration-300 group"
               >
                 {/* Icon wrapper */}
-                <div className="p-3 bg-red-50 text-red-600 group-hover:bg-red-600 group-hover:text-white transition-all duration-500 mr-5 shadow-sm rounded-none">
+                <div className="p-3 bg-gold-50 text-gold-600 group-hover:bg-gold-600 group-hover:text-white transition-all duration-500 mr-5 shadow-sm rounded-none">
                   <IconComponent className="h-5 w-5" />
                 </div>
 
                 <div className="space-y-2">
-                  <h3 className="font-serif text-lg text-[#111111] group-hover:text-red-600 transition-colors duration-300">
+                  <h3 className="font-serif text-lg text-[#111111] group-hover:text-gold-600 transition-colors duration-300">
                     {item.title}
                   </h3>
                   <p className="text-stone-500 text-xs sm:text-sm font-sans font-normal leading-relaxed">
