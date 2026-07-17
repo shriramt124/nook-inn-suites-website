@@ -4,6 +4,11 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Hotel Near MG Road Metro Station | Nook Inn & Suites Gurgaon",
   description: "Book affordable rooms at Nook Inn & Suites near MG Road Metro Station, DLF Phase 2, Gurgaon. Free WiFi, AC Rooms, 24x7 Check-in.",
+  icons: {
+    icon: "/logo.png?v=2",
+    shortcut: "/logo.png?v=2",
+    apple: "/logo.png?v=2",
+  },
   keywords: "hotel near mg road metro, hotel in dlf phase 2, budget hotel gurgaon, hotel near cyber city, hotel near ambience mall, business hotel gurgaon, best hotel in dlf phase 2, affordable hotel gurgaon",
   openGraph: {
     title: "Nook Inn & Suites | Budget Hotel in DLF Phase 2, Gurgaon",
