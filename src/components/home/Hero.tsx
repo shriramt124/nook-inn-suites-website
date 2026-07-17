@@ -453,15 +453,15 @@ export const Hero: React.FC = () => {
             animate="center"
             exit="exit"
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-            className="relative z-20 max-w-5xl mx-auto px-4 sm:px-6 md:px-12 text-center flex flex-col items-center space-y-3 sm:space-y-5 mt-20 sm:mt-28"
+            className="relative z-20 max-w-5xl mx-auto px-4 max-[360px]:px-3 sm:px-6 md:px-12 text-center flex flex-col items-center space-y-3 sm:space-y-5 max-[360px]:mt-16 mt-20 sm:mt-28"
           >
             {/* Badge */}
-            <span className="inline-block px-3 sm:px-4 py-1 sm:py-1.5 bg-gold-600/90 text-white text-[9px] sm:text-[10px] uppercase tracking-[0.2em] sm:tracking-[0.35em] font-semibold backdrop-blur-sm">
+            <span className="inline-block px-3 max-[360px]:px-2.5 sm:px-4 py-1 sm:py-1.5 bg-gold-600/90 text-white text-[9px] max-[360px]:text-[8px] sm:text-[10px] uppercase tracking-[0.2em] max-[360px]:tracking-[0.14em] sm:tracking-[0.35em] font-semibold backdrop-blur-sm">
               {slide.badge}
             </span>
 
             {/* Heading */}
-            <h1 className="font-serif text-3xl xs:text-4xl sm:text-5xl md:text-7xl font-extralight tracking-wide text-white leading-tight">
+            <h1 className="font-serif text-3xl max-[360px]:text-[1.85rem] xs:text-4xl sm:text-5xl md:text-7xl font-extralight tracking-wide text-white leading-tight">
               {slide.heading}
               <br className="hidden sm:inline" />
               <span className="italic font-normal text-gold-400">
@@ -482,7 +482,7 @@ export const Hero: React.FC = () => {
               {slide.perks.map(({ icon: Icon, label }) => (
                 <div
                   key={label}
-                  className="flex items-center justify-center gap-1.5 bg-white/10 backdrop-blur-sm border border-white/15 px-2 sm:px-3 py-1 sm:py-1.5 text-white text-[9px] sm:text-[10px] uppercase tracking-widest font-sans"
+                  className="flex items-center justify-center gap-1.5 bg-white/10 backdrop-blur-sm border border-white/15 px-2 sm:px-3 py-1 sm:py-1.5 text-white text-[9px] max-[360px]:text-[8px] sm:text-[10px] uppercase tracking-widest max-[360px]:tracking-wide font-sans"
                 >
                   <Icon className="h-3 w-3 sm:h-3.5 sm:w-3.5 text-gold-400 shrink-0" />
                   {label}
@@ -525,14 +525,14 @@ export const Hero: React.FC = () => {
         <button
           onClick={prevSlide}
           aria-label="Previous slide"
-          className="absolute left-2 sm:left-4 md:left-8 top-1/2 -translate-y-1/2 z-30 p-1.5 sm:p-2.5 bg-white/10 hover:bg-white/25 backdrop-blur-sm text-white border border-white/20 transition-all duration-200 cursor-pointer"
+          className="absolute left-2 sm:left-4 md:left-8 top-1/2 -translate-y-1/2 z-30 p-1.5 sm:p-2.5 bg-white/10 hover:bg-white/25 backdrop-blur-sm text-white border border-white/20 transition-all duration-200 cursor-pointer max-[360px]:hidden"
         >
           <ChevronLeft className="h-4 w-4 sm:h-5 sm:w-5" />
         </button>
         <button
           onClick={nextSlide}
           aria-label="Next slide"
-          className="absolute right-2 sm:right-4 md:right-8 top-1/2 -translate-y-1/2 z-30 p-1.5 sm:p-2.5 bg-white/10 hover:bg-white/25 backdrop-blur-sm text-white border border-white/20 transition-all duration-200 cursor-pointer"
+          className="absolute right-2 sm:right-4 md:right-8 top-1/2 -translate-y-1/2 z-30 p-1.5 sm:p-2.5 bg-white/10 hover:bg-white/25 backdrop-blur-sm text-white border border-white/20 transition-all duration-200 cursor-pointer max-[360px]:hidden"
         >
           <ChevronRight className="h-4 w-4 sm:h-5 sm:w-5" />
         </button>

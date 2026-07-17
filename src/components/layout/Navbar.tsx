@@ -49,7 +49,7 @@ export const Navbar: React.FC = () => {
           : "bg-gradient-to-b from-black/70 to-transparent py-3 sm:py-5"
           }`}
       >
-        <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-6 md:px-12 max-[360px]:px-3 flex items-center justify-between">
           {/* Logo Brand */}
           <Link href="/" className="flex items-center text-white group" onClick={closeMenu}>
             <Image
@@ -57,7 +57,7 @@ export const Navbar: React.FC = () => {
               alt="Nook Inn Logo"
               width={80}
               height={80}
-              className="w-28 sm:w-36 h-auto object-contain group-hover:scale-105 transition-transform duration-300"
+              className="w-28 max-[360px]:w-24 sm:w-36 h-auto object-contain group-hover:scale-105 transition-transform duration-300"
             />
           </Link>
 
@@ -97,7 +97,7 @@ export const Navbar: React.FC = () => {
           {/* Mobile Hamburger Menu Toggle Trigger */}
           <button
             onClick={toggleMenu}
-            className="lg:hidden text-white hover:text-gold-400 transition-colors focus:outline-none cursor-pointer"
+            className="lg:hidden text-white hover:text-gold-400 transition-colors focus:outline-none cursor-pointer max-[360px]:p-1"
             aria-label="Toggle navigation menu"
           >
             {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}

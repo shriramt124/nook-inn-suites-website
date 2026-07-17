@@ -68,7 +68,7 @@ export const AboutHotel: React.FC = () => {
           </p>
 
           {/* Stats Cards Row */}
-          <div className="grid grid-cols-3 gap-4 pt-6">
+          <div className="grid grid-cols-3 gap-4 max-[380px]:gap-2.5 max-[340px]:gap-2 pt-6 max-[380px]:pt-4">
             <StatsCard value="22" label="Total Rooms" description="Comfort, Premium, Family & Cottage" />
             <StatsCard value="4★" label="Star Rating" description="Certified 4-star hotel" />
             <StatsCard value="250" label="Banquet Seats" description="For weddings & large events" />
